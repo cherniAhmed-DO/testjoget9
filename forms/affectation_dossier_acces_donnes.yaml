@@ -4,7 +4,13 @@ elements:
     - className: org.joget.apps.form.lib.HiddenField
       properties:
         useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
         id: field17
+        value: haha
     - className: org.joget.apps.form.lib.HiddenField
       properties:
         useDefaultWhenEmpty: ''
