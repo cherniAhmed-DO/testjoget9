@@ -8,17 +8,18 @@
                             "className": "org.joget.apps.form.lib.TextArea",
                             "properties": {
                                 "requiredSanitize": "",
-                                "readonly": "",
                                 "permission_rules": {"a9847bf9-02d9-2e91-1282-aad84b16345e": {}},
                                 "validator": {
                                     "className": "",
                                     "properties": {}
                                 },
+                                "label": "0Utilisations qui seront faites des données demandées",
+                                "rows": "5",
+                                "readonly": "",
                                 "workflowVariable": "",
-                                "label": "Utilisations qui seront faites des données demandées",
                                 "id": "utilisations",
                                 "placeholder": "",
-                                "rows": "5",
+                                "iconIncluded": false,
                                 "cols": "20",
                                 "value": "",
                                 "readonlyLabel": ""
