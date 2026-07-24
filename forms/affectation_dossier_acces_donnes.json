@@ -8,7 +8,13 @@
                             "className": "org.joget.apps.form.lib.HiddenField",
                             "properties": {
                                 "useDefaultWhenEmpty": "",
-                                "id": "field17"
+                                "validator": {
+                                    "className": "",
+                                    "properties": {}
+                                },
+                                "workflowVariable": "",
+                                "id": "field17",
+                                "value": "hihiv1"
                             }
                         },
                         {
