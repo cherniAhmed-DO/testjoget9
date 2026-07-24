@@ -1,0 +1,95 @@
+elements:
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.FileUpload
+      properties:
+        resizeMethod: ''
+        permissionType: ''
+        padding: ''
+        permissionHidden: ''
+        maxSizeMsg: File size limit exceeded
+        resizeWidth: ''
+        multiple: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        maxSize: ''
+        label: Télécharger le rapport
+        resizeQuality: '0.8'
+        removeFile: ''
+        readonly: 'true'
+        attachment: 'true'
+        size: ''
+        fileTypeMsg: Invalid file type
+        id: rapport
+        resizeHeight: ''
+        fileType: ''
+    - className: org.joget.apps.form.lib.CustomHTML
+      properties:
+        requiredSanitize: ''
+        autoPopulate: ''
+        label: ''
+        id: field3
+        value: ''
+    - className: org.joget.apps.form.lib.FileUpload
+      properties:
+        resizeMethod: ''
+        permissionType: ''
+        padding: ''
+        maxSizeMsg: File size limit exceeded
+        resizeWidth: ''
+        multiple: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        maxSize: ''
+        label: Téléverser le rapport signé
+        resizeQuality: '0.8'
+        removeFile: ''
+        readonly: ''
+        attachment: 'true'
+        size: ''
+        fileTypeMsg: Invalid file type
+        id: rapport_signe
+        resizeHeight: ''
+        fileType: ''
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 100%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: ''
+    permissionReadonly: ''
+    permission:
+      className: ''
+      properties: {
+        }
+    label: ''
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: ''
+    regex: ''
+    readonly: ''
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section1
+    join: ''
+    readonlyLabel: ''
+className: org.joget.apps.form.model.Form
+properties:
+  loadBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+  name: rapport indv donne
+  description: ''
+  id: rapport_individuelle_donnes
+  storeBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+  tableName: acces_donnees

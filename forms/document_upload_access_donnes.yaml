@@ -1,0 +1,89 @@
+elements:
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.FileUpload
+      properties:
+        resizeMethod: ''
+        permissionType: ''
+        padding: ''
+        maxSizeMsg: Limite de taille de fichier dépassée
+        resizeWidth: ''
+        multiple: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        maxSize: ''
+        label: Rapport
+        resizeQuality: '0.8'
+        removeFile: ''
+        readonly: ''
+        attachment: 'true'
+        size: ''
+        fileTypeMsg: type de fichier invalide
+        id: rapport
+        resizeHeight: ''
+        fileType: ''
+    - className: org.joget.apps.form.lib.FileUpload
+      properties:
+        resizeMethod: ''
+        permissionType: ''
+        padding: ''
+        maxSizeMsg: Limite de taille de fichier dépassée
+        resizeWidth: ''
+        multiple: ''
+        validator:
+          className: org.joget.apps.form.lib.DefaultValidator
+          properties:
+            type: ''
+            message: ''
+            mandatory: 'true'
+        maxSize: ''
+        label: Rapport signée
+        resizeQuality: '0.8'
+        removeFile: ''
+        readonly: ''
+        attachment: 'true'
+        size: ''
+        fileTypeMsg: type de fichier invalide
+        id: rapport_signed
+        resizeHeight: ''
+        fileType: ''
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 100%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: ''
+    permissionReadonly: ''
+    permission:
+      className: ''
+      properties: {
+        }
+    label: ''
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: ''
+    regex: ''
+    readonly: ''
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section1
+    join: ''
+    readonlyLabel: ''
+className: org.joget.apps.form.model.Form
+properties:
+  loadBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+  name: document upload acces données
+  description: ''
+  id: document_upload_access_donnes
+  storeBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+  tableName: acces_donnees

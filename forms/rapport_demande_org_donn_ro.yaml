@@ -1,0 +1,65 @@
+elements:
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.FileUpload
+      properties:
+        resizeMethod: ''
+        permissionType: ''
+        padding: ''
+        permissionHidden: ''
+        maxSizeMsg: File size limit exceeded
+        resizeWidth: ''
+        multiple: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        maxSize: ''
+        label: Rapport
+        resizeQuality: '0.8'
+        removeFile: ''
+        readonly: 'true'
+        attachment: 'true'
+        size: ''
+        fileTypeMsg: Invalid file type
+        id: rapport_signe
+        resizeHeight: ''
+        fileType: ''
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 100%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: ''
+    permissionReadonly: ''
+    permission:
+      className: ''
+      properties: {
+        }
+    label: ''
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: ''
+    regex: ''
+    readonly: ''
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section1
+    join: ''
+    readonlyLabel: ''
+className: org.joget.apps.form.model.Form
+properties:
+  loadBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+  name: rapport demande organisme donnes ro
+  description: ''
+  id: rapport_demande_org_donn_ro
+  storeBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+  tableName: acces_donnees

@@ -1,0 +1,5 @@
+elements:
+- className: menu-component
+className: org.joget.apps.userview.model.UserviewPage
+properties:
+  id: up-988C4BEFCDC6490C739A98F0534A2518

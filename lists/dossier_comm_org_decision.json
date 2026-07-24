@@ -1,0 +1,149 @@
+{
+    "template": {
+        "className": "",
+        "properties": {}
+    },
+    "considerFilterWhenGetTotal": "",
+    "responsiveMode": "",
+    "rowActions": [{
+        "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+        "id": "rowAction_0",
+        "properties": {
+            "style-background-color": "#FFFFFF",
+            "hrefColumn": "id",
+            "link-style-background-color": "#085069",
+            "hrefParam": "id",
+            "rules": [],
+            "label": "<i class=\"far fa-edit\"><\/i> ",
+            "href": "decision_accees_donnees?&embed=true",
+            "confirmation": "",
+            "link-css-display-type": "btn btn-sm btn-primary",
+            "datalist_type": "row_action",
+            "target": "popup",
+            "header_label": ""
+        }
+    }],
+    "columns": [
+        {
+            "filterable": true,
+            "hidden": "true",
+            "include_export": "",
+            "renderHtml": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "id",
+            "sortable": "false",
+            "datalist_type": "column",
+            "name": "id",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_0",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "ID programme",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_id_prg",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_2",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Année de démarrage",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_annee_demarrage",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_1",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Décision",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_decision",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_3",
+            "alignment": ""
+        }
+    ],
+    "cardCollapsible": "",
+    "pageSize": "0",
+    "orderBy": "",
+    "description": "",
+    "showDataWhenFilterSet": "",
+    "disableResponsive": "",
+    "cardCollapseByDefault": "",
+    "id": "dossier_comm_org_decision",
+    "binder": {
+        "className": "org.melkart.plugin.JdbcDatalistBinder",
+        "properties": {
+            "querySource": "sql",
+            "pagination": "",
+            "debug": "",
+            "sql": "\r\nselect p.id,prog.c_id_prg,prog.c_annee_demarrage,p.c_decision from app_fd_dossier_comm_org dc\r\njoin\r\napp_fd_acces_donnees p on (p.id=dc.c_id_dossier)\r\njoin \r\napp_fd_insc_programme prog on (prog.c_contact_electronique_prg=p.createdBy)\r\nwhere dc.c_id_commission = '#requestParam.id_commission#'",
+            "primaryKey": "id"
+        }
+    },
+    "order": "",
+    "rowActionsDropdownLabel": "Décision",
+    "useSession": "",
+    "draggabletable": "",
+    "filters": [],
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "hidePageSize": "true",
+    "name": "dossier Commission Decision organisme",
+    "rowActionsMode": "",
+    "showhidecolumns": "",
+    "actions": []
+}

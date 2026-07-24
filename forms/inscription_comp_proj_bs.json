@@ -1,0 +1,202 @@
+{
+    "elements": [
+        {
+            "elements": [{
+                "elements": [{
+                    "className": "org.joget.marketplace.BootstrapStepsDisplayField",
+                    "properties": {
+                        "iconBackgroundColorComplete": "#0DA9EF",
+                        "connector": "line",
+                        "iconBackgroundColor": "#F5F5F5",
+                        "iconColor": "#FFFFFF",
+                        "options": [
+                            {
+                                "numbering": "1",
+                                "icon": "fas fa-plus-square",
+                                "label": "Ajouter un programme",
+                                "value": "1"
+                            },
+                            {
+                                "numbering": "2",
+                                "icon": "fas fa-project-diagram",
+                                "label": "Ajouter les projets",
+                                "value": "2"
+                            },
+                            {
+                                "numbering": "3",
+                                "icon": "fas fa-puzzle-piece",
+                                "label": "Ajouter les composant",
+                                "value": "3"
+                            }
+                        ],
+                        "scale": "1.5",
+                        "statusFieldId": "step",
+                        "theme": "2",
+                        "id": "steps_bs"
+                    }
+                }],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "permissionReadonly": "",
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "label": "",
+                "reverse": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": "",
+                "regex": "",
+                "readonly": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "comment": "",
+                "id": "section2",
+                "join": "",
+                "readonlyLabel": ""
+            }
+        },
+        {
+            "elements": [{
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.HiddenField",
+                        "properties": {
+                            "useDefaultWhenEmpty": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "workflowVariable": "",
+                            "id": "step",
+                            "value": "3"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.HiddenField",
+                        "properties": {
+                            "useDefaultWhenEmpty": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "workflowVariable": "",
+                            "id": "id",
+                            "value": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.CustomHTML",
+                        "properties": {
+                            "requiredSanitize": "",
+                            "autoPopulate": "",
+                            "label": "",
+                            "id": "field3",
+                            "value": "<script type=\"text/javascript\">\r\n    function resizeIframe(obj) {\r\n        obj.style.height = (obj.contentWindow.document.documentElement.scrollHeight)+50 + 'px';    \r\n    }\r\n \r\n    $(document).ready(function(){\r\n        const id=document.getElementById(\"id\").value;\r\n       const frameEvals = document.getElementById(\"frame\");\r\n        frameEvals.src=\"/jw/web/userview/rsu/rsu_userview/_/add_composante_projet?id_programme=\"+id+\"&embed=true\";\r\n         \r\n    });\r\n    <\/script>\r\n  \r\n    <iframe id=\"frame\" width=\"100%\" height=\"400px\" frameborder=\"0\" onload=\"resizeIframe(this)\" ><\/iframe>"
+                        }
+                    }
+                ],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "permissionReadonly": "",
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "label": "Liste des projets",
+                "reverse": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": "",
+                "regex": "",
+                "readonly": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "comment": "",
+                "id": "section3",
+                "join": "",
+                "readonlyLabel": ""
+            }
+        },
+        {
+            "elements": [{
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.CustomHTML",
+                        "properties": {
+                            "requiredSanitize": "",
+                            "autoPopulate": "",
+                            "label": "",
+                            "id": "field4",
+                            "value": "<script type=\"text/javascript\">\r\n    function resizeIframe(obj) {\r\n        obj.style.height = (obj.contentWindow.document.documentElement.scrollHeight)+50 + 'px';    \r\n    }\r\n \r\n    $(document).ready(function(){\r\n        const id=document.getElementById(\"id\").value;\r\n       const frameEvals = document.getElementById(\"frame2\");\r\n        frameEvals.src=\"/jw/web/userview/rsu/rsu_userview/_/liste_composante_projet?id_programme=\"+id+\"&embed=true\";\r\n         \r\n    });\r\n    <\/script>\r\n  \r\n    <iframe id=\"frame2\" width=\"100%\" height=\"400px\" frameborder=\"0\" onload=\"resizeIframe(this)\" ><\/iframe>"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.CustomHTML",
+                        "properties": {
+                            "requiredSanitize": "",
+                            "autoPopulate": "",
+                            "label": "",
+                            "id": "field6",
+                            "value": "<!-- Include SweetAlert2 Library -->\r\n<script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@11\"><\/script>\r\n\r\n<script>\r\n    $(document).ready(function () {\r\n        let formErrors = $(\"input[name='_FORM_ERRORS']\").val();\r\n        let formSuccess = document.getElementsByClassName('form-message form-success');\r\n        if (formErrors) {\r\n            try {\r\n                // Parse the error messages from the JSON string\r\n                let errors = JSON.parse(formErrors);\r\n\r\n                if (errors.errors) {\r\n                    // Collect all error messages\r\n                    let errorMessages = Object.values(errors.errors);\r\n\r\n                    // Show SweetAlert popup with validation messages\r\n                    if (errorMessages.length > 0) {\r\n                        Swal.fire({\r\n                            title: 'Erreur lors de la création du compte',\r\n                            html: errorMessages.join('<br>'), // Format messages as HTML\r\n                            icon: 'error',\r\n                            confirmButtonText: 'OK'\r\n                        }).then((result) => {\r\n                            if (result.isConfirmed) {\r\n                                    // Close the SweetAlert popup (default action)\r\n                                    Swal.close(); \r\n                            }\r\n                        });\r\n                    }\r\n                }\r\n            } catch (err) {\r\n                console.error(\"Error parsing _FORM_ERRORS:\", err);\r\n            }\r\n        }else if(formSuccess.length > 0){\r\n            Swal.fire({\r\n                title: 'Votre demande de création de compte a été complétée avec succès.',\r\n                html: 'vous recevrez une notification par mail dès qu\\'elle sera traitée', // Format messages as HTML\r\n                icon: 'success',\r\n                confirmButtonText: 'OK'\r\n            }).then((result) => {\r\n                if (result.isConfirmed) {\r\n                    window.location.href = '/jw/web/login'; // Change to your desired URL\r\n                }\r\n            });\r\n        }\r\n    });\r\n<\/script>\r\n"
+                        }
+                    }
+                ],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "permissionReadonly": "",
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "label": "Liste des composantes projet",
+                "reverse": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": "",
+                "regex": "",
+                "readonly": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "comment": "",
+                "id": "section4",
+                "join": "",
+                "readonlyLabel": ""
+            }
+        }
+    ],
+    "className": "org.joget.apps.form.model.Form",
+    "properties": {
+        "loadBinder": {"className": "org.joget.apps.form.lib.WorkflowFormBinder"},
+        "name": "inscription composante projet bs",
+        "description": "",
+        "id": "inscription_comp_proj_bs",
+        "storeBinder": {"className": "org.joget.apps.form.lib.WorkflowFormBinder"},
+        "tableName": "insc_programme"
+    }
+}

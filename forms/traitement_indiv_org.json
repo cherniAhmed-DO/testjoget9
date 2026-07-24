@@ -1,0 +1,369 @@
+{
+    "elements": [
+        {
+            "elements": [{
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.HiddenField",
+                        "properties": {
+                            "useDefaultWhenEmpty": "",
+                            "permission_rules": {
+                                "dfe8a88a-f446-139a-7413-312d35802739": {},
+                                "37434c45-4ea8-d607-1147-517862d6c0e7": {}
+                            },
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "workflowVariable": "",
+                            "id": "id_indiv",
+                            "value": "#requestParam.id_indiv#"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.HiddenField",
+                        "properties": {
+                            "useDefaultWhenEmpty": "",
+                            "permission_rules": {
+                                "dfe8a88a-f446-139a-7413-312d35802739": {},
+                                "37434c45-4ea8-d607-1147-517862d6c0e7": {}
+                            },
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "workflowVariable": "",
+                            "id": "tovalidate",
+                            "value": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.HiddenField",
+                        "properties": {
+                            "useDefaultWhenEmpty": "",
+                            "permission_rules": {
+                                "dfe8a88a-f446-139a-7413-312d35802739": {},
+                                "37434c45-4ea8-d607-1147-517862d6c0e7": {}
+                            },
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "workflowVariable": "",
+                            "id": "id_demande_organisme",
+                            "value": "#requestParam.id_organisme#"
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.CustomHTML",
+                        "properties": {
+                            "requiredSanitize": "",
+                            "autoPopulate": "",
+                            "permission_rules": {
+                                "dfe8a88a-f446-139a-7413-312d35802739": {},
+                                "37434c45-4ea8-d607-1147-517862d6c0e7": {}
+                            },
+                            "label": "",
+                            "id": "field2",
+                            "value": "<script type=\"text/javascript\">\r\n    function resizeIframe(obj) {\r\n         obj.style.height = (obj.contentWindow.document.documentElement.scrollHeight)+30 + 'px';    \r\n    }\r\n    $(document).ready(function(){\r\n       const frameEvals = document.getElementById(\"frameDossier\");\r\n        frameEvals.src=\"/jw/web/userview/rsu/rsu_userview/_/individus_iframe?id=#requestParam.id_indiv#&embed=true\";\r\n    //   frameEvals.addEventListener('mouseout',function(){\r\n    //         // frameEvals.src=\"/jw/web/userview/rsu/rsu_userview/_/demande_commission?id_commission=#variable.processID#&embed=true\";\r\n    //     }) \r\n    });\r\n    \r\n    <\/script>\r\n    <iframe id=\"frameDossier\" width=\"100%\" height=\"800px\" frameborder=\"0\" onload=\"resizeIframe(this)\" ><\/iframe>"
+                        }
+                    }
+                ],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "permissionReadonly": "",
+                "permission_rules": {
+                    "dfe8a88a-f446-139a-7413-312d35802739": {
+                        "permissionHidden": "",
+                        "readonly": ""
+                    },
+                    "37434c45-4ea8-d607-1147-517862d6c0e7": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "label": "",
+                "reverse": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": "",
+                "regex": "",
+                "readonly": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "comment": "",
+                "id": "section1",
+                "join": "",
+                "readonlyLabel": ""
+            }
+        },
+        {
+            "elements": [{
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.Radio",
+                        "properties": {
+                            "fullWidth": "",
+                            "controlField": "",
+                            "readonly": "",
+                            "optionsBinder": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "permission_rules": {
+                                "dfe8a88a-f446-139a-7413-312d35802739": {},
+                                "37434c45-4ea8-d607-1147-517862d6c0e7": {}
+                            },
+                            "options": [
+                                {
+                                    "label": "oui",
+                                    "value": "oui",
+                                    "grouping": ""
+                                },
+                                {
+                                    "label": "non",
+                                    "value": "non",
+                                    "grouping": ""
+                                }
+                            ],
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "type": "",
+                                    "message": "",
+                                    "mandatory": "true"
+                                }
+                            },
+                            "workflowVariable": "",
+                            "label": "Service fourni ?",
+                            "id": "traiter",
+                            "value": "",
+                            "readonlyLabel": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextArea",
+                        "properties": {
+                            "requiredSanitize": "",
+                            "readonly": "",
+                            "permission_rules": {
+                                "dfe8a88a-f446-139a-7413-312d35802739": {},
+                                "37434c45-4ea8-d607-1147-517862d6c0e7": {}
+                            },
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "type": "",
+                                    "message": "",
+                                    "mandatory": "true"
+                                }
+                            },
+                            "workflowVariable": "",
+                            "label": "Détails",
+                            "id": "commentaire",
+                            "placeholder": "",
+                            "rows": "5",
+                            "cols": "20",
+                            "value": "",
+                            "readonlyLabel": ""
+                        }
+                    }
+                ],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "permissionReadonly": "",
+                "permission_rules": {
+                    "dfe8a88a-f446-139a-7413-312d35802739": {
+                        "permissionHidden": "",
+                        "readonly": "true"
+                    },
+                    "37434c45-4ea8-d607-1147-517862d6c0e7": {}
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "label": "Etat des dossiers fournis à l'organisme",
+                "reverse": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": "",
+                "regex": "",
+                "readonly": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "comment": "",
+                "id": "section2",
+                "join": "",
+                "readonlyLabel": ""
+            }
+        },
+        {
+            "elements": [{
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.Radio",
+                        "properties": {
+                            "fullWidth": "",
+                            "controlField": "",
+                            "readonly": "",
+                            "optionsBinder": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "permission_rules": {
+                                "dfe8a88a-f446-139a-7413-312d35802739": {},
+                                "37434c45-4ea8-d607-1147-517862d6c0e7": {}
+                            },
+                            "options": [
+                                {
+                                    "label": "oui",
+                                    "value": "oui",
+                                    "grouping": ""
+                                },
+                                {
+                                    "label": "non",
+                                    "value": "non",
+                                    "grouping": ""
+                                }
+                            ],
+                            "validator": {
+                                "className": "org.joget.apps.form.lib.DefaultValidator",
+                                "properties": {
+                                    "type": "",
+                                    "message": "",
+                                    "mandatory": "true"
+                                }
+                            },
+                            "workflowVariable": "",
+                            "label": "Confirmer que le service a bien été reçu",
+                            "id": "traiter_anps",
+                            "value": "",
+                            "readonlyLabel": ""
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.TextArea",
+                        "properties": {
+                            "requiredSanitize": "",
+                            "readonly": "",
+                            "validator": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "workflowVariable": "",
+                            "label": "Commentaire",
+                            "id": "field8",
+                            "placeholder": "",
+                            "rows": "5",
+                            "cols": "20",
+                            "value": "",
+                            "readonlyLabel": ""
+                        }
+                    }
+                ],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "permissionReadonly": "",
+                "permission_rules": {
+                    "dfe8a88a-f446-139a-7413-312d35802739": {},
+                    "37434c45-4ea8-d607-1147-517862d6c0e7": {
+                        "permissionHidden": "true",
+                        "readonly": ""
+                    }
+                },
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "label": "Confirmation de l'ANPS",
+                "reverse": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": "",
+                "regex": "",
+                "readonly": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "comment": "",
+                "id": "section3",
+                "join": "",
+                "readonlyLabel": ""
+            }
+        }
+    ],
+    "className": "org.joget.apps.form.model.Form",
+    "properties": {
+        "noPermissionMessage": "",
+        "loadBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "permission_rules": [
+            {
+                "permission_key": "dfe8a88a-f446-139a-7413-312d35802739",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.DepartmentPermission",
+                    "properties": {
+                        "orgId": "rsu",
+                        "allowedDeptIds": "anps"
+                    }
+                },
+                "permission_name": "anps"
+            },
+            {
+                "permission_key": "37434c45-4ea8-d607-1147-517862d6c0e7",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.DepartmentPermission",
+                    "properties": {
+                        "orgId": "rsu",
+                        "allowedDeptIds": "organisme"
+                    }
+                },
+                "permission_name": "organisme"
+            }
+        ],
+        "name": "traitement des dossier individus organisme",
+        "description": "",
+        "postProcessorRunOn": "create",
+        "permission": {
+            "className": "",
+            "properties": {}
+        },
+        "id": "traitement_indiv_org",
+        "postProcessor": {
+            "className": "",
+            "properties": {}
+        },
+        "storeBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "tableName": "indiv_org"
+    }
+}

@@ -1,0 +1,496 @@
+elements:
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: org.joget.marketplace.MultiFormValidator
+          properties:
+            thirdValidator:
+              className: ''
+              properties: {
+                }
+            firstValidator:
+              className: org.joget.apps.form.lib.BeanShellValidator
+              properties:
+                decoration: '*'
+                script: "import java.sql.Connection;\r\nimport java.sql.PreparedStatement;\r\
+                  \nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\n\
+                  import javax.sql.DataSource;\r\nimport org.joget.apps.app.service.AppUtil;\r\
+                  \nimport org.joget.commons.util.LogUtil;\r\nimport org.joget.apps.app.service.AppUtil;\r\
+                  \nimport org.joget.workflow.model.service.WorkflowManager;\r\nimport\
+                  \ org.joget.commons.util.LogUtil;\r\n\r\nimport java.util.Arrays;\r\
+                  \nimport org.joget.apps.form.model.Element;\r\nimport org.joget.apps.form.model.FormData;\r\
+                  \nimport org.joget.apps.form.service.FormUtil;\r\nint countPerson=0;\r\
+                  \nString prenom = formData.getRequestParameter(\"prenom\");\r\n\
+                  String nom = formData.getRequestParameter(\"nom\");\r\nWorkflowManager\
+                  \ workflowManager = (WorkflowManager) AppUtil.getApplicationContext().getBean(\"\
+                  workflowManager\");\r\nConnection con = null;\r\nLogUtil.warn(\"\
+                  checking id\", \"#form.membre_commission.id#\");\r\n\r\n    try\
+                  \ {\r\n        DataSource ds = (DataSource)AppUtil.getApplicationContext().getBean(\"\
+                  setupDataSource\");\r\n        con = ds.getConnection();\r\n   \
+                  \     if(!con.isClosed()) {\r\n            PreparedStatement stmtSelectFolders\
+                  \ = con.prepareStatement(\"select count(*) AS countRecords from\
+                  \ app_fd_membre_commission where c_id_commission=? and c_nom=? and\
+                  \ c_prenom=? and id <> ?\");\r\n            stmtSelectFolders.setString(1,\"\
+                  #requestParam.id_commission#\");\r\n            stmtSelectFolders.setString(2,nom);\r\
+                  \n            stmtSelectFolders.setString(3,prenom);\r\n       \
+                  \     stmtSelectFolders.setString(4,\"#form.membre_commission.id#\"\
+                  );\r\n             LogUtil.warn(\"values counting person \", \"\
+                  #requestParam.id_commission#\"+\" \"+nom+\" \"+prenom);\r\n    \r\
+                  \n            ResultSet rs1 = stmtSelectFolders.executeQuery();\r\
+                  \n            while (rs1.next()) {\r\n                countPerson=rs1.getInt(\"\
+                  countRecords\"); \r\n            }\r\n        }\r\n    } catch(Exception\
+                  \ e) {\r\n        LogUtil.error(\"adding person to commissiont \"\
+                  , e, \"error\");\r\n    } finally {\r\n        try {\r\n       \
+                  \     if(con != null) {\r\n                con.close();\r\n    \
+                  \        }\r\n        } catch(SQLException e) {/* ignored */}\r\n\
+                  \    }\r\n\r\n\r\nif (countPerson!=0 ) {\r\n    String id = FormUtil.getElementParameterName(element);\r\
+                  \n    formData.addFormError(id, \"VOUS NE POUVEZ PAS ETRE DANS LA\
+                  \ MEME COMMISSION DEUX FOIS\");\r\n    return false;\r\n}else{\r\
+                  \n      return true;\r\n}\r\n"
+            secondValidator:
+              className: org.joget.apps.form.lib.DefaultValidator
+              properties:
+                type: ''
+                message: ''
+                mandatory: 'true'
+            fifthValidator:
+              className: ''
+              properties: {
+                }
+            fourthValidator:
+              className: ''
+              properties: {
+                }
+        label: Nom
+        disableIncrementDecrementArrow: ''
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: nom
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: org.joget.apps.form.lib.DefaultValidator
+          properties:
+            type: ''
+            message: ''
+            mandatory: 'true'
+        label: Prénom
+        disableIncrementDecrementArrow: ''
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: prenom
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: '10'
+        validator:
+          className: org.joget.marketplace.MultiFormValidator
+          properties:
+            thirdValidator:
+              className: ''
+              properties: {
+                }
+            firstValidator:
+              className: org.joget.apps.form.lib.DefaultValidator
+              properties:
+                type: numeric
+                message: ''
+                mandatory: 'true'
+            secondValidator:
+              className: org.joget.apps.form.lib.BeanShellValidator
+              properties:
+                decoration: ''
+                script: "import java.sql.Connection;\r\nimport java.sql.PreparedStatement;\r\
+                  \nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\n\
+                  import javax.sql.DataSource;\r\nimport org.joget.apps.app.service.AppUtil;\r\
+                  \nimport org.joget.commons.util.LogUtil;\r\nimport org.joget.apps.app.service.AppUtil;\r\
+                  \nimport org.joget.workflow.model.service.WorkflowManager;\r\nimport\
+                  \ org.joget.commons.util.LogUtil;\r\n\r\nimport java.util.Arrays;\r\
+                  \nimport org.joget.apps.form.model.Element;\r\nimport org.joget.apps.form.model.FormData;\r\
+                  \nimport org.joget.apps.form.service.FormUtil;\r\n\r\n\r\nString\
+                  \ field1Id = \"country_code_num_1\";\r\n\r\nString fieldValue =\
+                  \ formData.getRequestParameter(field1Id);\r\n\r\nLogUtil.info(\"\
+                  country code,\",fieldValue);\r\nLogUtil.info(\"phone numver,\",values[0]);\r\
+                  \n\r\nif (fieldValue.equals(\"BJ\") && values[0].length() < 10)\
+                  \ {\r\n    String id = FormUtil.getElementParameterName(element);\r\
+                  \n    formData.addFormError(id, \"format numéro téléphone incorrect\"\
+                  );\r\n    return false;\r\n}else{\r\n      return true;\r\n}"
+            fifthValidator:
+              className: ''
+              properties: {
+                }
+            fourthValidator:
+              className: ''
+              properties: {
+                }
+        label: Numéro de téléphone
+        disableIncrementDecrementArrow: ''
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: num_tel
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: country_code_num_1
+        value: ''
+    - className: org.joget.apps.form.lib.CustomHTML
+      properties:
+        requiredSanitize: ''
+        autoPopulate: ''
+        label: ''
+        id: field9
+        value: "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css\"\
+          \ />\r\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js\"\
+          ></script>\r\n<script>\r\n  $(document).ready(function(){\r\n    const fields\
+          \ = [\"num_tel\"]; // List of input field IDs\r\n\r\nfields.forEach((fieldId)\
+          \ => {\r\n    const input = document.getElementById(fieldId);\r\n    const\
+          \ countryCode1=document.getElementById('country_code_num_1').value;\r\n\
+          \    countryCodeSetup=\"\";\r\n    if(fieldId==\"num_tel\"){\r\n       \
+          \ countryCodeSetup=countryCode1!=''?countryCode1:'BJ';\r\n        document.getElementById('country_code_num_1').value=document.getElementById('country_code_num_1').value!=''?document.getElementById('country_code_num_1').value:'BJ';\r\
+          \n    }\r\n    \r\n    const iti = window.intlTelInput(input, {\r\n    \
+          \    initialCountry: countryCodeSetup, // Set default country to Benin\r\
+          \n        separateDialCode: true, // Display dial code separately\r\n  \
+          \      nationalMode: false,    // Allows free input without enforcing format\r\
+          \n        formatOnDisplay: false, // Prevents automatic formatting\r\n \
+          \       geoIpLookup: function (callback) {\r\n           \r\n          \
+          \  callback(\"BJ\");\r\n        },\r\n        utilsScript: \"https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js\"\
+          , // Required for formatting\r\n    });\r\n    input.addEventListener('countrychange',\
+          \ () => {\r\n            const countryData = iti.getSelectedCountryData();\
+          \ // Get the selected country data\r\n            input.value=\"\";\r\n\
+          \            // input.value=countryData.dialCode+' ';\r\n            if(fieldId==\"\
+          num_contacter\"){\r\n               document.getElementById('country_code_num_1').value=countryData.iso2;\r\
+          \n            }\r\n        });\r\n\r\n  \r\n\r\n    \r\n});\r\n  })\r\n\
+          </script>\r\n"
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 50%
+  - elements:
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: org.joget.apps.form.lib.DefaultValidator
+          properties:
+            type: email
+            message: ''
+            mandatory: 'true'
+        label: Email
+        disableIncrementDecrementArrow: ''
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: mail
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.SelectBox
+      properties:
+        controlField: ''
+        readonly: ''
+        size: ''
+        optionsBinder:
+          className: ''
+          properties: {
+            }
+        multiple: ''
+        options:
+        - label: Le Maire
+          value: Le Maire
+          grouping: ''
+        - label: Représentant du maire
+          value: Représentant du maire
+          grouping: ''
+        - label: Chef du GUPS
+          value: Chef du GUPS
+          grouping: ''
+        - label: Représentant 1 des ménages
+          value: Représentant 1 des ménages
+          grouping: ''
+        - label: Représentant 2 des ménages
+          value: Représentant 2 des ménages
+          grouping: ''
+        - label: Représentant 3 des ménages
+          value: Représentant 3 des ménages
+          grouping: ''
+        - label: Autre
+          value: Autre
+          grouping: ''
+        validator:
+          className: org.joget.apps.form.lib.DefaultValidator
+          properties:
+            type: ''
+            message: ''
+            mandatory: 'true'
+        workflowVariable: ''
+        label: Fonction
+        id: fonction
+        value: ''
+        readonlyLabel: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: Structure
+        disableIncrementDecrementArrow: ''
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: structure
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: id_commission
+        value: '#requestParam.id_commission#'
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: Presence
+        value: ''
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: type
+        value: '#requestParam.type#'
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 50%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: ''
+    permissionReadonly: ''
+    permission:
+      className: ''
+      properties: {
+        }
+    label: Ajouter un membre de la commission
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: ''
+    regex: ''
+    readonly: ''
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: membre_de_la_commission
+    join: ''
+    readonlyLabel: ''
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.SelectBox
+      properties:
+        controlField: ''
+        readonly: ''
+        size: ''
+        optionsBinder:
+          className: ''
+          properties: {
+            }
+        multiple: ''
+        options:
+        - label: Le Maire
+          value: Le Maire
+          grouping: ''
+        - label: Représentant du maire
+          value: Représentant du maire
+          grouping: ''
+        - label: Chef du GUPS
+          value: Chef du GUPS
+          grouping: ''
+        - label: Représentant 1 des ménages
+          value: Représentant 1 des ménages
+          grouping: ''
+        - label: Représentant 2 des ménages
+          value: Représentant 2 des ménages
+          grouping: ''
+        - label: Représentant 3 des ménages
+          value: Représentant 3 des ménages
+          grouping: ''
+        - label: Autre
+          value: Autre
+          grouping: ''
+        validator:
+          className: org.joget.apps.form.lib.DefaultValidator
+          properties:
+            type: ''
+            message: ''
+            mandatory: 'true'
+        workflowVariable: ''
+        label: Fonction
+        id: fonction
+        value: ''
+        readonlyLabel: ''
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 100%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: type
+    permissionReadonly: ''
+    permission:
+      className: ''
+      properties: {
+        }
+    label: ''
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: enquete
+    regex: ''
+    readonly: ''
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section2
+    join: ''
+    readonlyLabel: ''
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.SelectBox
+      properties:
+        controlField: ''
+        readonly: ''
+        size: ''
+        optionsBinder:
+          className: ''
+          properties: {
+            }
+        multiple: ''
+        options:
+        - label: Maires
+          value: Maires
+          grouping: ''
+        - label: Secrétaires exécutifs
+          value: Secrétaires exécutifs
+          grouping: ''
+        - label: Responsables des GUPS
+          value: Responsables des GUPS
+          grouping: ''
+        - label: Chefs de services de développement local et de la planification
+          value: Chefs de services de développement local et de la planification
+          grouping: ''
+        - label: Médecins chefs de Communes
+          value: Médecins chefs de Communes
+          grouping: ''
+        - label: Responsables de Dévelopement Rural
+          value: Responsables de Dévelopement Rural
+          grouping: ''
+        - label: Responsables d'OSC
+          value: Responsables d'OSC
+          grouping: ''
+        - label: Chefs de Circonscriptions scolaires
+          value: Chefs de Circonscriptions scolaires
+          grouping: ''
+        validator:
+          className: org.joget.apps.form.lib.DefaultValidator
+          properties:
+            type: ''
+            message: ''
+            mandatory: 'true'
+        workflowVariable: ''
+        label: Fonction
+        id: fonction
+        value: ''
+        readonlyLabel: ''
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 100%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: type
+    permissionReadonly: ''
+    permission:
+      className: ''
+      properties: {
+        }
+    label: ''
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: donnes
+    regex: ''
+    readonly: ''
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section3
+    join: ''
+    readonlyLabel: ''
+className: org.joget.apps.form.model.Form
+properties:
+  loadBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+  name: membre de la commission
+  description: ''
+  id: memebre_commission
+  storeBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+  tableName: membre_commission

@@ -1,0 +1,105 @@
+template:
+  className: ''
+  properties: {
+    }
+considerFilterWhenGetTotal: ''
+responsiveMode: parent
+rowActions:
+- className: org.joget.apps.datalist.lib.HyperlinkDataListAction
+  id: rowAction_1
+  properties:
+    hrefColumn: id;id
+    link-style-background-color: '#085069'
+    hrefParam: id;editForm
+    rules: [
+      ]
+    label: '<i class="fas fa-pen"></i> '
+    href: ajouter_membre_commission?id=&editForm=&embed=true
+    confirmation: ''
+    link-css-display-type: btn btn-sm btn-primary
+    datalist_type: row_action
+    target: popup
+    header_label: ''
+- className: org.joget.apps.datalist.lib.FormRowDeleteDataListAction
+  id: rowAction_0
+  properties:
+    deleteFiles: 'true'
+    deleteGridData: 'true'
+    link-style-background-color: '#FF0000'
+    formDefId: memebre_commission
+    deleteSubformData: 'true'
+    rules: [
+      ]
+    label: '<i class="fas fa-trash-alt"></i> '
+    confirmation: ''
+    link-css-display-type: btn btn-sm btn-danger
+    datalist_type: row_action
+    abortRelatedRunningProcesses: ''
+    header_label: ''
+columns:
+- filterable: true
+  hidden: 'false'
+  name: nom
+  id: column_9
+  label: Nom
+  sortable: 'false'
+- filterable: true
+  hidden: 'false'
+  name: prenom
+  id: column_8
+  label: Prénom
+  sortable: 'false'
+- filterable: true
+  hidden: 'false'
+  name: num_tel
+  id: column_7
+  label: Numéro de téléphone
+  sortable: 'false'
+- filterable: true
+  hidden: 'false'
+  name: mail
+  id: column_5
+  label: Email
+  sortable: 'false'
+- filterable: true
+  hidden: 'false'
+  name: fonction
+  id: column_6
+  label: Fonction
+  sortable: 'false'
+cardCollapsible: ''
+pageSize: '0'
+orderBy: ''
+description: ''
+showDataWhenFilterSet: ''
+disableResponsive: ''
+cardCollapseByDefault: ''
+id: membre_commission
+binder:
+  className: org.joget.apps.datalist.lib.FormRowDataListBinder
+  properties:
+    formDefId: memebre_commission
+    extraCondition: c_id_commission='#requestParam.id_commission#'
+order: ''
+rowActionsDropdownLabel: ''
+useSession: ''
+draggabletable: 'true'
+filters: [
+  ]
+pageSizeSelectorOptions: 10,20,30,40,50,100
+hidePageSize: 'true'
+name: membre commission
+rowActionsMode: 'true'
+showhidecolumns: ''
+actions:
+- className: org.joget.apps.datalist.lib.HyperlinkDataListAction
+  id: action_0
+  properties:
+    visible: 'true'
+    hrefColumn: ''
+    hrefParam: ''
+    label: Ajouter
+    href: ajouter_membre_commission?id_commission=#requestParam.id_commission#&type=#requestParam.type#&embed=true
+    confirmation: ''
+    datalist_type: action
+    target: popup

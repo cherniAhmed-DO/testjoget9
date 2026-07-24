@@ -1,0 +1,170 @@
+template:
+  className: ''
+  properties: {
+    }
+considerFilterWhenGetTotal: ''
+responsiveMode: ''
+rowActions:
+- className: org.joget.apps.datalist.lib.HyperlinkDataListAction
+  id: rowAction_0
+  properties:
+    hrefColumn: id
+    hidden: 'true'
+    link-style-background-color: '#085069'
+    permission_rules:
+      d1785e82-7c43-13ad-cc2b-76dbafaccc0b:
+        hidden: 'true'
+      139cbef1-fd98-f342-8bbc-c1fe3f3b1206: {
+        }
+    hrefParam: id
+    rules: [
+      ]
+    label: '<i class="far fa-edit"></i> '
+    confirmation: ''
+    datalist_type: row_action
+    target: popup
+    header_label: ''
+    href: f_personnes_habilitees?embed=true&id_master=#requestParam.id_master#
+    link-css-display-type: btn btn-sm btn-primary
+- className: org.joget.apps.datalist.lib.FormRowDeleteDataListAction
+  id: rowAction_1
+  properties:
+    hidden: 'true'
+    formDefId: personnes_habilitees
+    permission_rules:
+      d1785e82-7c43-13ad-cc2b-76dbafaccc0b:
+        hidden: 'true'
+      139cbef1-fd98-f342-8bbc-c1fe3f3b1206: {
+        }
+    deleteSubformData: ''
+    rules: [
+      ]
+    label: '<i class="fas fa-trash-alt"></i> '
+    confirmation: ''
+    datalist_type: row_action
+    header_label: ''
+    deleteFiles: ''
+    deleteGridData: ''
+    link-css-display-type: btn btn-sm btn-danger
+    abortRelatedRunningProcesses: ''
+columns:
+- filterable: true
+  hidden: 'false'
+  permission_rules:
+    d1785e82-7c43-13ad-cc2b-76dbafaccc0b: {
+      }
+    139cbef1-fd98-f342-8bbc-c1fe3f3b1206: {
+      }
+  name: prenom
+  id: column_1
+  label: Prénom
+  sortable: 'false'
+  datalist_type: column
+- filterable: true
+  hidden: 'false'
+  permission_rules:
+    d1785e82-7c43-13ad-cc2b-76dbafaccc0b: {
+      }
+    139cbef1-fd98-f342-8bbc-c1fe3f3b1206: {
+      }
+  name: nom
+  id: column_0
+  label: Nom
+  sortable: 'false'
+  datalist_type: column
+- filterable: true
+  hidden: 'false'
+  permission_rules:
+    d1785e82-7c43-13ad-cc2b-76dbafaccc0b: {
+      }
+    139cbef1-fd98-f342-8bbc-c1fe3f3b1206: {
+      }
+  name: num_tel
+  id: column_2
+  label: Numéro de téléphone
+  sortable: 'false'
+  datalist_type: column
+- filterable: true
+  hidden: 'false'
+  permission_rules:
+    d1785e82-7c43-13ad-cc2b-76dbafaccc0b: {
+      }
+    139cbef1-fd98-f342-8bbc-c1fe3f3b1206: {
+      }
+  name: adresse_mail
+  id: column_3
+  label: Adresse mail
+  sortable: 'false'
+  datalist_type: column
+permission_rules:
+- permission_key: d1785e82-7c43-13ad-cc2b-76dbafaccc0b
+  permission:
+    className: org.joget.apps.userview.lib.BeanShellPermission
+    properties:
+      script: return "#requestParam.read#".equals("true");
+  permission_name: readOnly
+- permission_key: 139cbef1-fd98-f342-8bbc-c1fe3f3b1206
+  permission:
+    className: org.joget.apps.userview.lib.DepartmentPermission
+    properties:
+      orgId: rsu
+      allowedDeptIds: organisme
+  permission_name: organisme
+cardCollapsible: ''
+pageSize: '0'
+orderBy: ''
+description: ''
+showDataWhenFilterSet: ''
+disableResponsive: ''
+cardCollapseByDefault: ''
+id: liste_personnes_habilitees
+binder:
+  className: org.joget.apps.datalist.lib.FormRowDataListBinder
+  properties:
+    formDefId: personnes_habilitees
+    extraCondition: ''
+order: ''
+useSession: ''
+draggabletable: ''
+filters:
+- hidden: 'true'
+  permission_rules:
+    d1785e82-7c43-13ad-cc2b-76dbafaccc0b:
+      hidden: 'true'
+    139cbef1-fd98-f342-8bbc-c1fe3f3b1206:
+      hidden: 'true'
+  name: id_master
+  id: filter_0
+  label: id_master
+  type:
+    className: org.joget.apps.datalist.lib.TextFieldDataListFilterType
+    properties:
+      defaultValue: '#requestParam.id_master#'
+      filterSelection: ''
+      searchFields: ''
+  datalist_type: filter
+  filterParamName: d-7481142-fn_id_master
+pageSizeSelectorOptions: 10,20,30,40,50,100
+hidePageSize: 'true'
+name: Liste des personnes habilitées
+rowActionsMode: ''
+showhidecolumns: ''
+actions:
+- className: org.joget.apps.datalist.lib.HyperlinkDataListAction
+  id: action_0
+  properties:
+    style-background-color: '#085069'
+    visible: 'true'
+    hrefColumn: ''
+    hidden: 'true'
+    permission_rules:
+      d1785e82-7c43-13ad-cc2b-76dbafaccc0b:
+        hidden: 'true'
+      139cbef1-fd98-f342-8bbc-c1fe3f3b1206: {
+        }
+    hrefParam: ''
+    label: Ajouter
+    href: f_personnes_habilitees?embed=true&id_master=#requestParam.id_master#
+    confirmation: ''
+    datalist_type: action
+    target: popup

@@ -1,0 +1,468 @@
+{
+    "elements": [
+        {
+            "elements": [{
+                "elements": [{
+                    "className": "org.joget.marketplace.BootstrapStepsDisplayField",
+                    "properties": {
+                        "iconBackgroundColorComplete": "#0DA9EF",
+                        "connector": "line",
+                        "iconBackgroundColor": "#F5F5F5",
+                        "iconColor": "#FFFFFF",
+                        "options": [
+                            {
+                                "numbering": "1",
+                                "icon": "fas fa-plus-square",
+                                "label": "Ajouter un programme",
+                                "value": "1"
+                            },
+                            {
+                                "numbering": "2",
+                                "icon": "fas fa-project-diagram",
+                                "label": "Ajouter les projets",
+                                "value": "2"
+                            },
+                            {
+                                "numbering": "3",
+                                "icon": "fas fa-puzzle-piece",
+                                "label": "Ajouter les composantes",
+                                "value": "3"
+                            }
+                        ],
+                        "scale": "1.5",
+                        "statusFieldId": "step",
+                        "theme": "2",
+                        "id": "steps_bs"
+                    }
+                }],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "100%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "permissionReadonly": "",
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "label": "",
+                "reverse": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": "",
+                "regex": "",
+                "readonly": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "comment": "",
+                "id": "section2",
+                "join": "",
+                "readonlyLabel": ""
+            }
+        },
+        {
+            "elements": [
+                {
+                    "elements": [
+                        {
+                            "className": "org.joget.apps.form.lib.HiddenField",
+                            "properties": {
+                                "useDefaultWhenEmpty": "",
+                                "validator": {
+                                    "className": "",
+                                    "properties": {}
+                                },
+                                "workflowVariable": "",
+                                "id": "step",
+                                "value": "1"
+                            }
+                        },
+                        {
+                            "className": "org.joget.apps.form.lib.TextField",
+                            "properties": {
+                                "requiredSanitize": "",
+                                "maxlength": "",
+                                "validator": {
+                                    "className": "",
+                                    "properties": {}
+                                },
+                                "label": "Année du démarrage d'exercice au bénin",
+                                "readonly": "",
+                                "size": "",
+                                "workflowVariable": "",
+                                "style": "",
+                                "id": "annee_demarrage",
+                                "placeholder": "",
+                                "value": "",
+                                "readonlyLabel": "",
+                                "storeNumeric": ""
+                            }
+                        },
+                        {
+                            "className": "org.joget.apps.form.lib.IdGeneratorField",
+                            "properties": {
+                                "hidden": "",
+                                "format": "Prg-??????",
+                                "workflowVariable": "",
+                                "envVariable": "counter",
+                                "isDistributedGeneration": "",
+                                "label": "Identifiant du programme",
+                                "id": "id_prg"
+                            }
+                        },
+                        {
+                            "className": "org.joget.apps.form.lib.TextField",
+                            "properties": {
+                                "requiredSanitize": "",
+                                "maxlength": "",
+                                "validator": {
+                                    "className": "org.joget.apps.form.lib.DefaultValidator",
+                                    "properties": {
+                                        "custom-regex-casesensitive": "true",
+                                        "custom-regex": "^[A-Z' ]+$",
+                                        "type": "custom",
+                                        "message": "Le nom du programme doit être composé uniquement des lettres en majuscule",
+                                        "mandatory": "true"
+                                    }
+                                },
+                                "label": "Nom du programme",
+                                "disableIncrementDecrementArrow": "",
+                                "readonly": "",
+                                "size": "",
+                                "workflowVariable": "",
+                                "style": "",
+                                "id": "nom_prg",
+                                "placeholder": "",
+                                "value": "",
+                                "readonlyLabel": "",
+                                "storeNumeric": ""
+                            }
+                        },
+                        {
+                            "className": "org.joget.apps.form.lib.TextField",
+                            "properties": {
+                                "requiredSanitize": "",
+                                "maxlength": "",
+                                "validator": {
+                                    "className": "",
+                                    "properties": {}
+                                },
+                                "label": "Nom du programme en langue de travail locale",
+                                "readonly": "",
+                                "size": "",
+                                "workflowVariable": "",
+                                "style": "",
+                                "id": "nom_prg_loc",
+                                "placeholder": "",
+                                "value": "",
+                                "readonlyLabel": "",
+                                "storeNumeric": ""
+                            }
+                        },
+                        {
+                            "className": "org.joget.apps.form.lib.TextField",
+                            "properties": {
+                                "requiredSanitize": "",
+                                "maxlength": "",
+                                "validator": {
+                                    "className": "org.joget.apps.form.lib.DefaultValidator",
+                                    "properties": {
+                                        "custom-regex-casesensitive": "true",
+                                        "custom-regex": "^[A-Z' ]+$",
+                                        "type": "custom",
+                                        "message": "L'acronyme du programme doit être composé uniquement des lettres en majuscule",
+                                        "mandatory": "true"
+                                    }
+                                },
+                                "label": "Acronyme du programme",
+                                "disableIncrementDecrementArrow": "",
+                                "readonly": "",
+                                "size": "",
+                                "workflowVariable": "",
+                                "style": "",
+                                "id": "acro_prg",
+                                "placeholder": "",
+                                "value": "",
+                                "readonlyLabel": "",
+                                "storeNumeric": ""
+                            }
+                        },
+                        {
+                            "className": "org.joget.apps.form.lib.TextArea",
+                            "properties": {
+                                "requiredSanitize": "",
+                                "readonly": "",
+                                "validator": {
+                                    "className": "",
+                                    "properties": {}
+                                },
+                                "workflowVariable": "",
+                                "label": "Description du programme",
+                                "id": "desc_prog",
+                                "placeholder": "",
+                                "rows": "5",
+                                "cols": "20",
+                                "value": "",
+                                "readonlyLabel": ""
+                            }
+                        }
+                    ],
+                    "className": "org.joget.apps.form.model.Column",
+                    "properties": {"width": "50%"}
+                },
+                {
+                    "elements": [
+                        {
+                            "className": "org.joget.apps.form.lib.FileUpload",
+                            "properties": {
+                                "resizeMethod": "",
+                                "permissionType": "",
+                                "padding": "",
+                                "maxSizeMsg": "Limite de taille de fichier dépassée",
+                                "resizeWidth": "",
+                                "multiple": "",
+                                "validator": {
+                                    "className": "",
+                                    "properties": {}
+                                },
+                                "maxSize": "",
+                                "label": "Documents d'autorisation au bénin",
+                                "resizeQuality": "0.8",
+                                "removeFile": "",
+                                "readonly": "",
+                                "attachment": "true",
+                                "size": "",
+                                "fileTypeMsg": "type de fichier invalide",
+                                "id": "doc_autorisation",
+                                "resizeHeight": "",
+                                "fileType": ""
+                            }
+                        },
+                        {
+                            "className": "org.joget.apps.form.lib.FileUpload",
+                            "properties": {
+                                "resizeMethod": "",
+                                "permissionType": "",
+                                "padding": "",
+                                "maxSizeMsg": "Limite de taille de fichier dépassée",
+                                "resizeWidth": "",
+                                "multiple": "",
+                                "validator": {
+                                    "className": "",
+                                    "properties": {}
+                                },
+                                "maxSize": "",
+                                "label": "Documents statutaires",
+                                "resizeQuality": "0.8",
+                                "removeFile": "",
+                                "readonly": "",
+                                "attachment": "true",
+                                "size": "",
+                                "fileTypeMsg": "type de fichier invalide",
+                                "id": "doc_statutaires",
+                                "resizeHeight": "",
+                                "fileType": ""
+                            }
+                        },
+                        {
+                            "className": "org.joget.apps.form.lib.TextField",
+                            "properties": {
+                                "requiredSanitize": "",
+                                "maxlength": "",
+                                "validator": {
+                                    "className": "",
+                                    "properties": {}
+                                },
+                                "label": "Contact téléphonique du programme",
+                                "readonly": "",
+                                "size": "",
+                                "workflowVariable": "",
+                                "style": "",
+                                "id": "contact_tel_prg",
+                                "placeholder": "",
+                                "value": "",
+                                "readonlyLabel": "",
+                                "storeNumeric": ""
+                            }
+                        },
+                        {
+                            "className": "org.joget.apps.form.lib.TextField",
+                            "properties": {
+                                "requiredSanitize": "",
+                                "maxlength": "",
+                                "validator": {
+                                    "className": "org.joget.apps.form.lib.DefaultValidator",
+                                    "properties": {
+                                        "type": "email",
+                                        "message": "",
+                                        "mandatory": ""
+                                    }
+                                },
+                                "label": "Contact électronique du programme",
+                                "disableIncrementDecrementArrow": "",
+                                "readonly": "",
+                                "size": "",
+                                "workflowVariable": "email",
+                                "style": "",
+                                "id": "contact_electronique_prg",
+                                "placeholder": "",
+                                "value": "",
+                                "readonlyLabel": "",
+                                "storeNumeric": ""
+                            }
+                        },
+                        {
+                            "className": "org.joget.apps.form.lib.TextField",
+                            "properties": {
+                                "requiredSanitize": "",
+                                "maxlength": "",
+                                "validator": {
+                                    "className": "",
+                                    "properties": {}
+                                },
+                                "label": "Localisation du programme",
+                                "readonly": "",
+                                "size": "",
+                                "workflowVariable": "",
+                                "style": "",
+                                "id": "localisation_prg",
+                                "placeholder": "",
+                                "value": "",
+                                "readonlyLabel": "",
+                                "storeNumeric": ""
+                            }
+                        },
+                        {
+                            "className": "org.joget.apps.form.lib.TextField",
+                            "properties": {
+                                "requiredSanitize": "",
+                                "maxlength": "",
+                                "validator": {
+                                    "className": "",
+                                    "properties": {}
+                                },
+                                "label": "Responsable",
+                                "disableIncrementDecrementArrow": "",
+                                "readonly": "",
+                                "size": "",
+                                "workflowVariable": "",
+                                "style": "",
+                                "id": "responsable",
+                                "placeholder": "",
+                                "value": "",
+                                "readonlyLabel": "",
+                                "storeNumeric": ""
+                            }
+                        },
+                        {
+                            "className": "org.joget.apps.form.lib.TextField",
+                            "properties": {
+                                "requiredSanitize": "",
+                                "maxlength": "",
+                                "validator": {
+                                    "className": "",
+                                    "properties": {}
+                                },
+                                "label": "Fonction",
+                                "disableIncrementDecrementArrow": "",
+                                "readonly": "",
+                                "size": "",
+                                "workflowVariable": "",
+                                "style": "",
+                                "id": "fonction",
+                                "placeholder": "",
+                                "value": "",
+                                "readonlyLabel": "",
+                                "storeNumeric": ""
+                            }
+                        },
+                        {
+                            "className": "org.joget.apps.form.lib.FileUpload",
+                            "properties": {
+                                "resizeMethod": "",
+                                "permissionType": "",
+                                "padding": "",
+                                "maxSizeMsg": "Limite de taille de fichier dépassée",
+                                "resizeWidth": "",
+                                "multiple": "",
+                                "validator": {
+                                    "className": "",
+                                    "properties": {}
+                                },
+                                "maxSize": "",
+                                "label": "Justificatifs",
+                                "resizeQuality": "0.8",
+                                "removeFile": "",
+                                "readonly": "",
+                                "attachment": "true",
+                                "size": "",
+                                "fileTypeMsg": "type de fichier invalide",
+                                "id": "justificatifs",
+                                "resizeHeight": "",
+                                "fileType": ""
+                            }
+                        }
+                    ],
+                    "className": "org.joget.apps.form.model.Column",
+                    "properties": {"width": "50%"}
+                }
+            ],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "permissionReadonly": "",
+                "permission": {
+                    "className": "",
+                    "properties": {}
+                },
+                "label": "Fiche de création du programme",
+                "reverse": "",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": "",
+                "regex": "",
+                "readonly": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "comment": "",
+                "id": "section1",
+                "join": "",
+                "readonlyLabel": ""
+            }
+        }
+    ],
+    "className": "org.joget.apps.form.model.Form",
+    "properties": {
+        "noPermissionMessage": "",
+        "loadBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "name": "Inscription du programme",
+        "description": "",
+        "postProcessorRunOn": "create",
+        "permission": {
+            "className": "",
+            "properties": {}
+        },
+        "id": "inscription_programme",
+        "postProcessor": {
+            "className": "",
+            "properties": {}
+        },
+        "storeBinder": {
+            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+            "properties": {}
+        },
+        "tableName": "insc_programme"
+    }
+}

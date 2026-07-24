@@ -1,0 +1,250 @@
+elements:
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: '10'
+        validator:
+          className: org.joget.marketplace.MultiFormValidator
+          properties:
+            thirdValidator:
+              className: ''
+              properties: {
+                }
+            firstValidator:
+              className: org.joget.apps.form.lib.DefaultValidator
+              properties:
+                type: ''
+                message: ''
+                mandatory: 'true'
+            secondValidator:
+              className: org.joget.apps.form.lib.BeanShellValidator
+              properties:
+                decoration: ''
+                script: "import java.sql.Connection;\r\nimport java.sql.PreparedStatement;\r\
+                  \nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\n\
+                  import javax.sql.DataSource;\r\nimport org.joget.apps.app.service.AppUtil;\r\
+                  \nimport org.joget.commons.util.LogUtil;\r\nimport org.joget.apps.app.service.AppUtil;\r\
+                  \nimport org.joget.workflow.model.service.WorkflowManager;\r\nimport\
+                  \ org.joget.commons.util.LogUtil;\r\nimport java.time.LocalDate;\r\
+                  \nimport java.time.temporal.ChronoUnit;\r\nimport java.util.Arrays;\r\
+                  \nimport org.joget.apps.form.model.Element;\r\nimport org.joget.apps.form.model.FormData;\r\
+                  \nimport org.joget.apps.form.service.FormUtil;\r\nimport java.time.format.DateTimeFormatter;\r\
+                  \n\r\n\r\nString npi=\"\";\r\nString statusProfile=\"\";\r\nString\
+                  \ typeInactivite=\"\";\r\nString dateRadiation=\"\";\r\nboolean\
+                  \ isBeforeToday=false;\r\nint nombreDes=0;\r\n long daysDifference\
+                  \ =0;\r\nWorkflowManager workflowManager = (WorkflowManager) AppUtil.getApplicationContext().getBean(\"\
+                  workflowManager\");\r\nConnection con = null;\r\ntry {\r\n    DataSource\
+                  \ ds = (DataSource)AppUtil.getApplicationContext().getBean(\"setupDataSource\"\
+                  );\r\n    con = ds.getConnection();\r\n    if(!con.isClosed()) {\r\
+                  \n        PreparedStatement stmtSelectFolders = con.prepareStatement(\"\
+                  select p.c_npi,p.c_statut_profile,p.c_type_inactivite,p.c_date_radiation,count(d.id)\
+                  \ AS countDes from app_fd_d_preinscription p join app_fd_desincription\
+                  \ d on (p.c_npi=d.c_npi)  where p.c_npi=? group by p.c_npi,c_statut_profile,c_date_radiation,c_type_inactivite;\"\
+                  );\r\n            stmtSelectFolders.setString(1,values[0]);\r\n\
+                  \        ResultSet rs1 = stmtSelectFolders.executeQuery();\r\n \
+                  \       while (rs1.next()) {\r\n            npi=rs1.getString(\"\
+                  c_npi\"); \r\n            statusProfile=rs1.getString(\"c_statut_profile\"\
+                  );\r\n            typeInactivite=rs1.getString(\"c_type_inactivite\"\
+                  );\r\n            dateRadiation=rs1.getString(\"c_date_radiation\"\
+                  );\r\n            nombreDes=nombreDes+rs1.getInt(\"countDes\");\r\
+                  \n            LogUtil.info(\"nombre des \",nombreDes.toString());\r\
+                  \n            // date dateRadiationReel=dateRadiation.parse(\"yyyy-MM-dd\"\
+                  );\r\n        }\r\n        \r\n        if (dateRadiation != null\
+                  \ && !dateRadiation.isEmpty()) {\r\n            // Convert String\
+                  \ to LocalDate\r\n            LocalDate dbDate = LocalDate.parse(dateRadiation,\
+                  \ DateTimeFormatter.ofPattern(\"yyyy-MM-dd\"));\r\n            LocalDate\
+                  \ today = LocalDate.now();\r\n            daysDifference = ChronoUnit.DAYS.between(today,\
+                  \ dbDate);\r\n            if(dbDate.isBefore(today)){\r\n      \
+                  \          isBeforeToday=false;\r\n            }else{\r\n      \
+                  \          isBeforeToday=true;\r\n            }\r\n        }\r\n\
+                  \r\n    }\r\n} catch(Exception e) {\r\n    LogUtil.error(\"verifying\
+                  \ NPI and desinscription \", e, \"error\");\r\n} finally {\r\n \
+                  \   try {\r\n        if(con != null) {\r\n            con.close();\r\
+                  \n        }\r\n    } catch(SQLException e) {/* ignored */}\r\n}\r\
+                  \nif (statusProfile.equals(\"Actif\")){\r\n    String id = FormUtil.getElementParameterName(element);\r\
+                  \n    formData.addFormError(id, \"votre profile est déja Actife\"\
+                  );\r\n    return false;\r\n}else if (typeInactivite.equals(\"radiation\
+                  \ définitive\")){\r\n\r\n    String id = FormUtil.getElementParameterName(element);\r\
+                  \n    formData.addFormError(id, \"vous avez été radié définitivement\
+                  \ du RSU\");\r\n    return false;\r\n\r\n}else if(typeInactivite.equals(\"\
+                  radiation temporaire\") && isBeforeToday){\r\n \r\n    String id\
+                  \ = FormUtil.getElementParameterName(element);\r\n    formData.addFormError(id,\
+                  \ \"vous avez une radiation temporaire et il reste \"+daysDifference+\"\
+                  \ jours\");\r\n    return false;\r\n\r\n}else if(typeInactivite.equals(\"\
+                  désinscription\") && nombreDes>=2){\r\n    String id = FormUtil.getElementParameterName(element);\r\
+                  \n    formData.addFormError(id, \"vous avez été désinscrit \"+nombreDes+\"\
+                  \ fois, vous ne pouvez pas vous réinscrire\");\r\n    return false;\r\
+                  \n\r\n}else{\r\n      return true;\r\n}\r\n"
+            fifthValidator:
+              className: ''
+              properties: {
+                }
+            fourthValidator:
+              className: ''
+              properties: {
+                }
+        label: NPI
+        disableIncrementDecrementArrow: ''
+        readonly: ''
+        size: ''
+        workflowVariable: npi
+        style: ''
+        id: npi
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.CustomHTML
+      properties:
+        requiredSanitize: ''
+        autoPopulate: ''
+        label: ''
+        id: field3
+        value: "<!-- Include SweetAlert2 Library -->\r\n<script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@11\"\
+          ></script>\r\n\r\n<script>\r\n    $(document).ready(function () {\r\n  \
+          \      let formErrors = $(\"input[name='_FORM_ERRORS']\").val();\r\n\r\n\
+          \        if (formErrors) {\r\n            try {\r\n                // Parse\
+          \ the error messages from the JSON string\r\n                let errors\
+          \ = JSON.parse(formErrors);\r\n\r\n                if (errors.errors) {\r\
+          \n                    // Collect all error messages\r\n                \
+          \    let errorMessages = Object.values(errors.errors);\r\n\r\n         \
+          \           // Show SweetAlert popup with validation messages\r\n      \
+          \              if (errorMessages.length > 0) {\r\n                     \
+          \   Swal.fire({\r\n                            title: 'Erreur lors de l\\\
+          'enregistrement de la demande de la réinscription',\r\n                \
+          \            html: errorMessages.join('<br>'), // Format messages as HTML\r\
+          \n                            icon: 'error',\r\n                       \
+          \     confirmButtonText: 'OK'\r\n                        }).then((result)\
+          \ => {\r\n                            if (result.isConfirmed) {\r\n    \
+          \                            // Check specific error messages\r\n      \
+          \                          const specificError1 = \"Vous devez être au moins\
+          \ préinscrit au RSU pour pouvoir passer une demande de réclamation\";\r\n\
+          \                                const specificError2 = \"il y'a déja une\
+          \ demande de réclamation de même type et même NPI\";\r\n\r\n           \
+          \                     if (errorMessages.some(msg => msg.includes(specificError1)\
+          \ || msg.includes(specificError2))) {\r\n                              \
+          \      // Redirect to a specific URL\r\n                               \
+          \     window.location.href = '/jw/web/userview/rsu/rsu_userview/_/welcome';\
+          \ // Change to your desired URL\r\n                                } else\
+          \ {\r\n                                    // Close the SweetAlert popup\
+          \ (default action)\r\n                                    Swal.close();\r\
+          \n                                }\r\n                            }\r\n\
+          \                        });\r\n                    }\r\n              \
+          \  }\r\n            } catch (err) {\r\n                console.error(\"\
+          Error parsing _FORM_ERRORS:\", err);\r\n            }\r\n        }\r\n \
+          \   });\r\n</script>\r\n"
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: id_preinscription
+        value: ''
+    - className: org.joget.apps.form.lib.CustomHTML
+      properties:
+        requiredSanitize: ''
+        autoPopulate: ''
+        label: ''
+        id: field5
+        value: "<script>\r\n    $(\"body\").on(\"page_loaded\", function() {\r\n \
+          \    console.log(\"page loaded;--------------------------------------------------new\
+          \ trigger\");\r\n          var errorMessageElement = document.querySelector(\"\
+          .form-message.form-errors\");\r\n            // If the error message element\
+          \ does not exist after 2 seconds, proceed with redirection\r\n         \
+          \   if (!errorMessageElement) {\r\n                    console.log(\"-----------------no\
+          \ error  \");\r\n                // Redirect to the constructed URL\r\n\
+          \                 var URL=sessionStorage.getItem('redirectURL');\r\n   \
+          \               console.log(\"-----------------no error  and url is \",URL);\r\
+          \n                 if(URL!=null){\r\n                    //  sessionStorage.removeItem('redirectURL');\r\
+          \n                     window.location.href = URL;\r\n                 }\r\
+          \n        \r\n            }\r\n    });\r\n$(document).ready(function() {\r\
+          \n         console.log(\"page loaded;--------------------------------------------------new\
+          \ trigger\");\r\n          var errorMessageElement = document.querySelector(\"\
+          .form-message.form-errors\");\r\n            // If the error message element\
+          \ does not exist after 2 seconds, proceed with redirection\r\n         \
+          \   if (!errorMessageElement) {\r\n                    console.log(\"-----------------no\
+          \ error  \");\r\n                // Redirect to the constructed URL\r\n\
+          \                 var URL=sessionStorage.getItem('redirectURL');\r\n   \
+          \               console.log(\"-----------------no error  and url is \",URL);\r\
+          \n                 if(URL!=null){\r\n                    //  sessionStorage.removeItem('redirectURL');\r\
+          \n                     window.location.href = URL;\r\n                 }\r\
+          \n        \r\n            }\r\n   \r\n    $(\"#assignmentComplete\").on(\"\
+          click\", function(event) {\r\n    \r\n       \r\n              event.preventDefault();\
+          \ // Prevent default behavior to ensure our logic works\r\n        // var\
+          \ msgFlash = document.getElementById('msg_flash').value;\r\n        // var\
+          \ typeFlash = document.getElementById('type_flash').value;\r\n        //\
+          \ Construct the redirect URL with the parameters\r\n        var redirectUrl\
+          \ = '/jw/web/userview/rsu/rsu_userview/_/welcome?type=success&flash=Votre\
+          \ demande a été créée avec succès ';\r\n        sessionStorage.setItem('redirectURL',redirectUrl);\r\
+          \n        $(\"#assignmentComplete, #submit\").off(\"click\").trigger(\"\
+          click\");\r\n        \r\n      \r\n    });\r\n});\r\n</script>\r\n"
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: statut
+        value: Demande crée
+    className: org.joget.apps.form.model.Column
+    properties:
+      horizontal: ''
+      customWidth: ''
+      width: 100%
+      label: ''
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: ''
+    permissionReadonly: ''
+    permission:
+      className: ''
+      properties: {
+        }
+    label: Demande de réinscription
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: ''
+    regex: ''
+    readonly: ''
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section3
+    join: ''
+    readonlyLabel: ''
+className: org.joget.apps.form.model.Form
+properties:
+  noPermissionMessage: ''
+  loadBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+    properties: {
+      }
+  name: vérification npi réinscription
+  description: ''
+  postProcessorRunOn: create
+  permission:
+    className: ''
+    properties: {
+      }
+  id: verification_npi_reinscription
+  postProcessor:
+    className: ''
+    properties: {
+      }
+  storeBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+    properties: {
+      }
+  tableName: reinscription

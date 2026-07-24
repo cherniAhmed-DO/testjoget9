@@ -1,0 +1,312 @@
+elements:
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.CustomHTML
+      properties:
+        requiredSanitize: ''
+        autoPopulate: ''
+        permission_rules:
+          9c2921e3-4573-96a7-fe03-ab6b50c6f8d9: {
+            }
+        label: ''
+        id: field5
+        value: "<script type=\"text/javascript\">\r\n    function resizeIframe(obj)\
+          \ {\r\n        obj.style.height = (obj.contentWindow.document.documentElement.scrollHeight)+50\
+          \ + 'px';    \r\n    }\r\n \r\n    $(document).ready(function(){\r\n   \
+          \    const frameEvals = document.getElementById(\"frame\");\r\n       var\
+          \ id_pre=document.getElementById('id_preinscription').value;\r\n       \
+          \ frameEvals.src=\"/jw/web/userview/rsu/rsu_userview/_/preins_sub?id=\"\
+          +id_pre+\"&embed=true\";\r\n         \r\n    });\r\n    </script>\r\n  \r\
+          \n    <iframe id=\"frame\" width=\"100%\" height=\"400px\" frameborder=\"\
+          0\" onload=\"resizeIframe(this)\" ></iframe>"
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        permission_rules:
+          9c2921e3-4573-96a7-fe03-ab6b50c6f8d9: {
+            }
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: id_preinscription
+        value: ''
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 100%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: ''
+    permissionHidden: ''
+    permissionReadonly: ''
+    permission_rules:
+      9c2921e3-4573-96a7-fe03-ab6b50c6f8d9:
+        permissionHidden: ''
+        readonly: 'true'
+    permission:
+      className: ''
+      properties: {
+        }
+    label: ''
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: ''
+    regex: ''
+    readonly: 'true'
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section2
+    join: ''
+    readonlyLabel: 'true'
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.Radio
+      properties:
+        fullWidth: ''
+        controlField: ''
+        readonly: ''
+        optionsBinder:
+          className: ''
+          properties: {
+            }
+        permission_rules:
+          9c2921e3-4573-96a7-fe03-ab6b50c6f8d9: {
+            }
+        options:
+        - label: Valider
+          value: valider
+          grouping: ''
+        - label: Refuser
+          value: refuser
+          grouping: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: decision_gups
+        label: Décision
+        id: decision_gups
+        value: ''
+        readonlyLabel: ''
+    - className: org.joget.apps.form.lib.TextArea
+      properties:
+        requiredSanitize: ''
+        readonly: ''
+        permission_rules:
+          9c2921e3-4573-96a7-fe03-ab6b50c6f8d9: {
+            }
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        label: Commentaire
+        id: commentaire
+        placeholder: ''
+        rows: '5'
+        cols: '20'
+        value: ''
+        readonlyLabel: ''
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 100%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: consentement
+    permissionHidden: ''
+    permissionReadonly: ''
+    permission_rules:
+      9c2921e3-4573-96a7-fe03-ab6b50c6f8d9:
+        permissionHidden: ''
+        readonly: 'true'
+    permission:
+      className: ''
+      properties: {
+        }
+    label: Validation GUPS
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: non
+    regex: ''
+    readonly: 'true'
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section3
+    join: ''
+    readonlyLabel: ''
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.Radio
+      properties:
+        fullWidth: ''
+        controlField: ''
+        readonly: ''
+        optionsBinder:
+          className: ''
+          properties: {
+            }
+        permission_rules:
+          9c2921e3-4573-96a7-fe03-ab6b50c6f8d9: {
+            }
+        options:
+        - label: Valider
+          value: valider
+          grouping: ''
+        - label: Refuser
+          value: refuser
+          grouping: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: decision_finale_rei
+        label: Décision finale
+        id: decision_finale
+        value: ''
+        readonlyLabel: ''
+    - className: org.joget.apps.form.lib.TextArea
+      properties:
+        requiredSanitize: ''
+        readonly: ''
+        permission_rules:
+          9c2921e3-4573-96a7-fe03-ab6b50c6f8d9: {
+            }
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        label: Commentaire
+        id: commentaire2
+        placeholder: ''
+        rows: '5'
+        cols: '20'
+        value: ''
+        readonlyLabel: ''
+    - className: org.joget.apps.form.lib.CustomHTML
+      properties:
+        requiredSanitize: ''
+        autoPopulate: ''
+        permission_rules:
+          9c2921e3-4573-96a7-fe03-ab6b50c6f8d9: {
+            }
+        label: ''
+        id: field6
+        value: "<script>\r\n    $(\"body\").on(\"page_loaded\", function() {\r\n \
+          \    console.log(\"page loaded;--------------------------------------------------new\
+          \ trigger\");\r\n          var errorMessageElement = document.querySelector(\"\
+          .form-message.form-errors\");\r\n            // If the error message element\
+          \ does not exist after 2 seconds, proceed with redirection\r\n         \
+          \   if (!errorMessageElement) {\r\n                    console.log(\"-----------------no\
+          \ error  \");\r\n                // Redirect to the constructed URL\r\n\
+          \                 var URL=sessionStorage.getItem('redirectURL');\r\n   \
+          \               console.log(\"-----------------no error  and url is \",URL);\r\
+          \n                 if(URL!=null){\r\n                    //  sessionStorage.removeItem('redirectURL');\r\
+          \n                     window.location.href = URL;\r\n                 }\r\
+          \n        \r\n            }\r\n    });\r\n$(document).ready(function() {\r\
+          \n         console.log(\"page loaded;--------------------------------------------------new\
+          \ trigger\");\r\n          var errorMessageElement = document.querySelector(\"\
+          .form-message.form-errors\");\r\n            // If the error message element\
+          \ does not exist after 2 seconds, proceed with redirection\r\n         \
+          \   if (!errorMessageElement) {\r\n                    console.log(\"-----------------no\
+          \ error  \");\r\n                // Redirect to the constructed URL\r\n\
+          \                 var URL=sessionStorage.getItem('redirectURL');\r\n   \
+          \               console.log(\"-----------------no error  and url is \",URL);\r\
+          \n                 if(URL!=null){\r\n                    //  sessionStorage.removeItem('redirectURL');\r\
+          \n                     window.location.href = URL;\r\n                 }\r\
+          \n        \r\n            }\r\n   \r\n    $(\"#assignmentComplete\").on(\"\
+          click\", function(event) {\r\n      \r\n        event.preventDefault();\
+          \ // Prevent default behavior to ensure our logic works\r\n        var typeFlash\
+          \  = \"success\";\r\n        var msgFlash = \"Votre intervention a été enregistré\
+          e avec succès\";\r\n        // Construct the redirect URL with the parameters\r\
+          \n        var redirectUrl = '/jw/web/userview/rsu/rsu_userview/_/welcome?type='\
+          \ + encodeURIComponent(typeFlash) + '&flash=' + encodeURIComponent(msgFlash);\r\
+          \n        sessionStorage.setItem('redirectURL',redirectUrl);\r\n       \
+          \ $(\"#assignmentComplete, #submit\").off(\"click\").trigger(\"click\");\r\
+          \n        \r\n      \r\n    });\r\n});\r\n</script>\r\n\r\n\r\n\r\n<style>\r\
+          \n       #npi {\r\n            filter: blur(5px); /* Apply blur effect */\r\
+          \n            transition: filter 0.3s ease; /* Smooth transition when blurring/unblurring\
+          \ */\r\n            cursor: pointer;\r\n        }\r\n\r\n        #npi:hover\
+          \ {\r\n            filter: none; /* Remove blur on hover or focus */\r\n\
+          \            cursor: text;\r\n        }\r\n</style>\r\n"
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 100%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: ''
+    permissionReadonly: ''
+    permission_rules:
+      9c2921e3-4573-96a7-fe03-ab6b50c6f8d9:
+        permissionHidden: ''
+        readonly: 'true'
+    permission:
+      className: ''
+      properties: {
+        }
+    label: Validation finale du service contentieux
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: ''
+    regex: ''
+    readonly: ''
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section8
+    join: ''
+    readonlyLabel: ''
+className: org.joget.apps.form.model.Form
+properties:
+  noPermissionMessage: ''
+  loadBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+    properties: {
+      }
+  permission_rules:
+  - permission_key: 9c2921e3-4573-96a7-fe03-ab6b50c6f8d9
+    permission:
+      className: org.joget.apps.userview.lib.BeanShellPermission
+      properties:
+        script: return ("#form.reinscription.createdby[#variable.processID#]#").equals("#currentUser.username#");
+    permission_name: performer
+  name: Décision finale réinscription
+  description: ''
+  postProcessorRunOn: both
+  permission:
+    className: ''
+    properties: {
+      }
+  id: decision_finale_reinscription
+  postProcessor:
+    className: org.joget.apps.app.lib.DatabaseUpdateTool
+    properties:
+      query: |-
+        UPDATE app_fd_d_preinscription
+        SET c_statut_demande = 'A enquêter'
+        WHERE id = '#form.d_preinscription.id#'
+        AND '#form.d_preinscription.inclusion_enquete#' = 'incluse'
+      jdbcDatasource: default
+  storeBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+    properties: {
+      }
+  tableName: reinscription

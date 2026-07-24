@@ -1,0 +1,224 @@
+{
+    "template": {
+        "className": "",
+        "properties": {}
+    },
+    "rowActions": [
+        {
+            "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+            "id": "rowAction_1",
+            "properties": {
+                "hrefColumn": "id",
+                "link-style-background-color": "#2B4DD6",
+                "permission_rules": {
+                    "923cc10b-8019-049e-c0e6-f471f79cfeeb": {},
+                    "5fdd72be-3179-25c9-5609-932ed6d07be1": {}
+                },
+                "hrefParam": "id",
+                "rules": [],
+                "label": "<i class=\"far fa-eye\" aria-hidden=\"true\"><\/i> ",
+                "href": "insc_projet",
+                "confirmation": "",
+                "link-css-display-type": "btn btn-sm btn-primary",
+                "datalist_type": "row_action",
+                "target": "_blank",
+                "header_label": ""
+            }
+        },
+        {
+            "className": "org.joget.apps.datalist.lib.FormRowDeleteDataListAction",
+            "id": "rowAction_0",
+            "properties": {
+                "hidden": "true",
+                "formDefId": "inscri_projet",
+                "permission_rules": {
+                    "923cc10b-8019-049e-c0e6-f471f79cfeeb": {"hidden": "true"},
+                    "5fdd72be-3179-25c9-5609-932ed6d07be1": {"hidden": ""}
+                },
+                "deleteSubformData": "",
+                "rules": [],
+                "label": "<i class=\"fas fa-trash-alt\"><\/i> ",
+                "confirmation": "",
+                "datalist_type": "row_action",
+                "header_label": "",
+                "deleteFiles": "",
+                "deleteGridData": "",
+                "link-css-display-type": "btn btn-sm btn-danger",
+                "abortRelatedRunningProcesses": ""
+            }
+        }
+    ],
+    "columns": [
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "permission_rules": {
+                "923cc10b-8019-049e-c0e6-f471f79cfeeb": {},
+                "5fdd72be-3179-25c9-5609-932ed6d07be1": {}
+            },
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Identifiant du projet",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_id_projet",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_3",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "permission_rules": {
+                "923cc10b-8019-049e-c0e6-f471f79cfeeb": {},
+                "5fdd72be-3179-25c9-5609-932ed6d07be1": {}
+            },
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Acronyme du projet",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_acronyme_projet",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_4",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "permission_rules": {
+                "923cc10b-8019-049e-c0e6-f471f79cfeeb": {},
+                "5fdd72be-3179-25c9-5609-932ed6d07be1": {}
+            },
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Nom du projet",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_nom_projet_locale",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_0",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "permission_rules": {
+                "923cc10b-8019-049e-c0e6-f471f79cfeeb": {},
+                "5fdd72be-3179-25c9-5609-932ed6d07be1": {}
+            },
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Nom du bailleur",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_noms_bailleurs",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_1",
+            "alignment": ""
+        }
+    ],
+    "permission_rules": [
+        {
+            "permission_key": "923cc10b-8019-049e-c0e6-f471f79cfeeb",
+            "permission": {
+                "className": "org.joget.apps.userview.lib.DepartmentPermission",
+                "properties": {
+                    "orgId": "rsu",
+                    "allowedDeptIds": "serv_info"
+                }
+            },
+            "permission_name": "equipe it"
+        },
+        {
+            "permission_key": "5fdd72be-3179-25c9-5609-932ed6d07be1",
+            "permission": {
+                "className": "org.joget.plugin.enterprise.AnonymousUserviewPermission",
+                "properties": {}
+            },
+            "permission_name": "Unnamed"
+        }
+    ],
+    "pageSize": "0",
+    "orderBy": "",
+    "description": "",
+    "permission": {
+        "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+        "properties": {}
+    },
+    "filters": [],
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "name": "projet organisme",
+    "id": "projet_organisme",
+    "binder": {
+        "className": "org.melkart.plugin.JdbcDatalistBinder",
+        "properties": {
+            "querySource": "sql",
+            "pagination": "",
+            "debug": "true",
+            "sql": "select * from app_fd_insc_projet where c_id_programme='#requestParam.id_programme#'",
+            "primaryKey": "id"
+        }
+    },
+    "actions": [{
+        "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+        "id": "action_0",
+        "properties": {
+            "style-background-color": "#085069",
+            "visible": "true",
+            "hrefColumn": "",
+            "hidden": "true",
+            "permission_rules": {
+                "923cc10b-8019-049e-c0e6-f471f79cfeeb": {"hidden": "true"},
+                "5fdd72be-3179-25c9-5609-932ed6d07be1": {"hidden": ""}
+            },
+            "hrefParam": "",
+            "label": "<i class=\"fas fa-plus\"><\/i> Ajouter",
+            "href": "insc_projet?id_programme=#requestParam.id_programme#&embed=true",
+            "confirmation": "",
+            "datalist_type": "action",
+            "target": "popup"
+        }
+    }],
+    "order": ""
+}

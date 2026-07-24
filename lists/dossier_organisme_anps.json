@@ -1,0 +1,285 @@
+{
+    "template": {
+        "className": "",
+        "properties": {}
+    },
+    "rowActions": [{
+        "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+        "id": "rowAction_2",
+        "properties": {
+            "hrefColumn": "id;id_indiv",
+            "hidden": "",
+            "link-style-background-color": "#085069",
+            "permission_rules": {
+                "b9fa2c5e-8a4c-99ce-4d0d-7acba164ca27": {},
+                "7b850bc1-c587-3dcb-ef0e-3b588033127a": {}
+            },
+            "hrefParam": "id;id_indiv",
+            "rules": [],
+            "label": "<i class=\"fas fa-pen\"><\/i> ",
+            "confirmation": "",
+            "datalist_type": "row_action",
+            "target": "popup",
+            "header_label": "",
+            "href": "traitement_dossier_individus?&embed=true",
+            "link-css-display-type": "btn btn-sm btn-primary"
+        }
+    }],
+    "columns": [
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "permission_rules": {
+                "b9fa2c5e-8a4c-99ce-4d0d-7acba164ca27": {},
+                "7b850bc1-c587-3dcb-ef0e-3b588033127a": {}
+            },
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "NPI",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_numero_npi",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_7",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "permission_rules": {
+                "b9fa2c5e-8a4c-99ce-4d0d-7acba164ca27": {},
+                "7b850bc1-c587-3dcb-ef0e-3b588033127a": {}
+            },
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Nom",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_hl2a",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_0",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "permission_rules": {
+                "b9fa2c5e-8a4c-99ce-4d0d-7acba164ca27": {},
+                "7b850bc1-c587-3dcb-ef0e-3b588033127a": {}
+            },
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Prénom",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_hl2b",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_2",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "permission_rules": {
+                "b9fa2c5e-8a4c-99ce-4d0d-7acba164ca27": {},
+                "7b850bc1-c587-3dcb-ef0e-3b588033127a": {}
+            },
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Mois de naissance",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_hl5m",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_3",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "permission_rules": {
+                "b9fa2c5e-8a4c-99ce-4d0d-7acba164ca27": {},
+                "7b850bc1-c587-3dcb-ef0e-3b588033127a": {}
+            },
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Année de naissance",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_hl5y",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_4",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "permission_rules": {
+                "b9fa2c5e-8a4c-99ce-4d0d-7acba164ca27": {},
+                "7b850bc1-c587-3dcb-ef0e-3b588033127a": {}
+            },
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Identité des individus",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_identind",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_5",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "permission_rules": {
+                "b9fa2c5e-8a4c-99ce-4d0d-7acba164ca27": {},
+                "7b850bc1-c587-3dcb-ef0e-3b588033127a": {}
+            },
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Identité du ménage",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_identmen",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_6",
+            "alignment": ""
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "renderHtml": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Confirmation ANPS",
+            "sortable": "false",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "c_traiter_anps",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "",
+                "properties": {}
+            },
+            "style": "",
+            "id": "column_1",
+            "alignment": ""
+        }
+    ],
+    "permission_rules": [
+        {
+            "permission_key": "b9fa2c5e-8a4c-99ce-4d0d-7acba164ca27",
+            "permission": {
+                "className": "org.joget.apps.userview.lib.DepartmentPermission",
+                "properties": {
+                    "orgId": "rsu",
+                    "allowedDeptIds": "organisme"
+                }
+            },
+            "permission_name": "organisme"
+        },
+        {
+            "permission_key": "7b850bc1-c587-3dcb-ef0e-3b588033127a",
+            "permission": {
+                "className": "org.joget.apps.userview.lib.DepartmentPermission",
+                "properties": {
+                    "orgId": "rsu",
+                    "allowedDeptIds": "anps"
+                }
+            },
+            "permission_name": "anps"
+        }
+    ],
+    "pageSize": "0",
+    "orderBy": "",
+    "description": "",
+    "filters": [],
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "name": "dossier_organisme_anps",
+    "id": "dossier_organisme_anps",
+    "binder": {
+        "className": "org.melkart.plugin.JdbcDatalistBinder",
+        "properties": {
+            "querySource": "sql",
+            "pagination": "",
+            "debug": "true",
+            "sql": "select p.c_identind,p.c_identmen,p.c_numero_npi,p.c_hl2a,p.c_hl2b,indorg.id,p.c_hl5m,p.c_hl5y,p.id as \"id_indiv\",indorg.c_traiter_anps from app_fd_dossier_organisme dc\r\njoin\r\napp_fd_table_individus p on (p.id=dc.c_id_dossier)\r\njoin \r\napp_fd_indiv_org indorg on (indorg.c_id_indiv=p.id)\r\nwhere dc.c_id_organisme = '#requestParam.id_organisme#' and indorg.c_tovalidate='oui'",
+            "primaryKey": "id"
+        }
+    },
+    "actions": [],
+    "order": ""
+}
