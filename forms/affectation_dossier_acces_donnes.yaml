@@ -10,7 +10,7 @@ elements:
             }
         workflowVariable: ''
         id: field17
-        value: hahahihi
+        value: hahahihihahahaha
     - className: org.joget.apps.form.lib.HiddenField
       properties:
         useDefaultWhenEmpty: ''
@@ -445,8 +445,11 @@ elements:
     readonlyLabel: ''
 className: org.joget.apps.form.model.Form
 properties:
+  noPermissionMessage: ''
   loadBinder:
     className: org.joget.apps.form.lib.WorkflowFormBinder
+    properties: {
+      }
   permission_rules:
   - permission_key: a9847bf9-02d9-2e91-1282-aad84b16345e
     permission:
@@ -457,7 +460,18 @@ properties:
     permission_name: unite_gestion
   name: affectation dossier acces donnes
   description: ''
+  postProcessorRunOn: create
+  permission:
+    className: ''
+    properties: {
+      }
   id: affectation_dossier_acces_donnes
+  postProcessor:
+    className: ''
+    properties: {
+      }
   storeBinder:
     className: org.joget.apps.form.lib.WorkflowFormBinder
+    properties: {
+      }
   tableName: acces_donnees
