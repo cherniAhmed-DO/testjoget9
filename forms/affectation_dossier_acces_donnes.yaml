@@ -1,6 +1,10 @@
 elements:
 - elements:
   - elements:
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        id: field15
     - className: org.joget.apps.form.lib.TextArea
       properties:
         requiredSanitize: ''
