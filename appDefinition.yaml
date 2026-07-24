@@ -5205,7 +5205,7 @@ messageList:
       form.fileupload.remove
       _fr
     appId: rsu
-    appVersion: '1'
+    appVersion: '4'
     messageKey: |
       form.fileupload.remove
     locale: fr
@@ -5214,51 +5214,51 @@ resourceList:
   appResource:
   - id: amoirie.png
     appId: rsu
-    appVersion: '1'
+    appVersion: '4'
     filesize: '7778'
     permissionProperties: '{"permission": { "className": "", "properties": {}}}'
   - id: banner-chat.jpg
     appId: rsu
-    appVersion: '1'
+    appVersion: '4'
     filesize: '476651'
     permissionClass: org.joget.apps.userview.lib.LoggedInUserPermission
     permissionProperties: '{"permission": { "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
       "properties": {}}}'
   - id: banner.jpeg
     appId: rsu
-    appVersion: '1'
+    appVersion: '4'
     filesize: '154147'
     permissionProperties: '{"hashvariable":"#appResource.banner.jpeg#","permission":{"className":"","properties":{}}}'
   - id: bg_rsu_(1).png
     appId: rsu
-    appVersion: '1'
+    appVersion: '4'
     filesize: '733483'
     permissionProperties: '{"hashvariable":"#appResource.bg_rsu_(1).png#","permission":{"className":"","properties":{}}}'
   - id: bg_rsu_(2).png
     appId: rsu
-    appVersion: '1'
+    appVersion: '4'
     filesize: '3674555'
     permissionProperties: '{"hashvariable":"#appResource.bg_rsu_(2).png#","permission":{"className":"","properties":{}}}'
   - id: Contact_Us___ANPS.png
     appId: rsu
-    appVersion: '1'
+    appVersion: '4'
     filesize: '24492'
     permissionClass: org.joget.apps.userview.lib.LoggedInUserPermission
     permissionProperties: '{"permission": { "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
       "properties": {}}}'
   - id: image.png
     appId: rsu
-    appVersion: '1'
+    appVersion: '4'
     filesize: '2052007'
     permissionProperties: '{"hashvariable":"#appResource.image.png#","permission":{"className":"","properties":{}}}'
   - id: logo_(1).png
     appId: rsu
-    appVersion: '1'
+    appVersion: '4'
     filesize: '21945'
     permissionProperties: '{"hashvariable":"#appResource.logo_(1).png#","permission":{"className":"","properties":{}}}'
   - id: logo.png
     appId: rsu
-    appVersion: '1'
+    appVersion: '4'
     filesize: '29641'
     permissionProperties: '{"hashvariable":"#appResource.logo.png#","permission":{"className":"","properties":{}}}'
 createdBy: admin

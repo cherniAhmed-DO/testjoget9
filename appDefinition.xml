@@ -1770,7 +1770,7 @@
          <id>form.fileupload.remove
 _fr</id>
          <appId>rsu</appId>
-         <appVersion>1</appVersion>
+         <appVersion>4</appVersion>
          <messageKey>form.fileupload.remove
 </messageKey>
          <locale>fr</locale>
@@ -1781,14 +1781,14 @@ _fr</id>
       <appResource>
          <id>amoirie.png</id>
          <appId>rsu</appId>
-         <appVersion>1</appVersion>
+         <appVersion>4</appVersion>
          <filesize>7778</filesize>
          <permissionProperties>{&quot;permission&quot;: { &quot;className&quot;: &quot;&quot;, &quot;properties&quot;: {}}}</permissionProperties>
       </appResource>
       <appResource>
          <id>banner-chat.jpg</id>
          <appId>rsu</appId>
-         <appVersion>1</appVersion>
+         <appVersion>4</appVersion>
          <filesize>476651</filesize>
          <permissionClass>org.joget.apps.userview.lib.LoggedInUserPermission</permissionClass>
          <permissionProperties>{&quot;permission&quot;: { &quot;className&quot;: &quot;org.joget.apps.userview.lib.LoggedInUserPermission&quot;, &quot;properties&quot;: {}}}</permissionProperties>
@@ -1796,28 +1796,28 @@ _fr</id>
       <appResource>
          <id>banner.jpeg</id>
          <appId>rsu</appId>
-         <appVersion>1</appVersion>
+         <appVersion>4</appVersion>
          <filesize>154147</filesize>
          <permissionProperties>{&quot;hashvariable&quot;:&quot;#appResource.banner.jpeg#&quot;,&quot;permission&quot;:{&quot;className&quot;:&quot;&quot;,&quot;properties&quot;:{}}}</permissionProperties>
       </appResource>
       <appResource>
          <id>bg_rsu_(1).png</id>
          <appId>rsu</appId>
-         <appVersion>1</appVersion>
+         <appVersion>4</appVersion>
          <filesize>733483</filesize>
          <permissionProperties>{&quot;hashvariable&quot;:&quot;#appResource.bg_rsu_(1).png#&quot;,&quot;permission&quot;:{&quot;className&quot;:&quot;&quot;,&quot;properties&quot;:{}}}</permissionProperties>
       </appResource>
       <appResource>
          <id>bg_rsu_(2).png</id>
          <appId>rsu</appId>
-         <appVersion>1</appVersion>
+         <appVersion>4</appVersion>
          <filesize>3674555</filesize>
          <permissionProperties>{&quot;hashvariable&quot;:&quot;#appResource.bg_rsu_(2).png#&quot;,&quot;permission&quot;:{&quot;className&quot;:&quot;&quot;,&quot;properties&quot;:{}}}</permissionProperties>
       </appResource>
       <appResource>
          <id>Contact_Us___ANPS.png</id>
          <appId>rsu</appId>
-         <appVersion>1</appVersion>
+         <appVersion>4</appVersion>
          <filesize>24492</filesize>
          <permissionClass>org.joget.apps.userview.lib.LoggedInUserPermission</permissionClass>
          <permissionProperties>{&quot;permission&quot;: { &quot;className&quot;: &quot;org.joget.apps.userview.lib.LoggedInUserPermission&quot;, &quot;properties&quot;: {}}}</permissionProperties>
@@ -1825,21 +1825,21 @@ _fr</id>
       <appResource>
          <id>image.png</id>
          <appId>rsu</appId>
-         <appVersion>1</appVersion>
+         <appVersion>4</appVersion>
          <filesize>2052007</filesize>
          <permissionProperties>{&quot;hashvariable&quot;:&quot;#appResource.image.png#&quot;,&quot;permission&quot;:{&quot;className&quot;:&quot;&quot;,&quot;properties&quot;:{}}}</permissionProperties>
       </appResource>
       <appResource>
          <id>logo_(1).png</id>
          <appId>rsu</appId>
-         <appVersion>1</appVersion>
+         <appVersion>4</appVersion>
          <filesize>21945</filesize>
          <permissionProperties>{&quot;hashvariable&quot;:&quot;#appResource.logo_(1).png#&quot;,&quot;permission&quot;:{&quot;className&quot;:&quot;&quot;,&quot;properties&quot;:{}}}</permissionProperties>
       </appResource>
       <appResource>
          <id>logo.png</id>
          <appId>rsu</appId>
-         <appVersion>1</appVersion>
+         <appVersion>4</appVersion>
          <filesize>29641</filesize>
          <permissionProperties>{&quot;hashvariable&quot;:&quot;#appResource.logo.png#&quot;,&quot;permission&quot;:{&quot;className&quot;:&quot;&quot;,&quot;properties&quot;:{}}}</permissionProperties>
       </appResource>
