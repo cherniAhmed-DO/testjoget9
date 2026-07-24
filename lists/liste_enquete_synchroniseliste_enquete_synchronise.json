@@ -1,0 +1,93 @@
+{
+    "template": {
+        "className": "",
+        "properties": {}
+    },
+    "rowActions": [{
+        "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+        "id": "rowAction_0",
+        "properties": {
+            "hrefColumn": "id;Chef d'équipe;Equipe d'enquete",
+            "link-style-background-color": "#085069",
+            "hrefParam": "recordId;chef;membre",
+            "rules": [],
+            "label": "<i class=\"fas fa-user-check\"><\/i> ",
+            "href": "enquete_pmt_process",
+            "confirmation": "",
+            "link-css-display-type": "btn btn-sm btn-primary",
+            "datalist_type": "row_action",
+            "target": "_self",
+            "header_label": "Vérifier l'enquête"
+        }
+    }],
+    "columns": [
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "Campagne d'enquêtes",
+            "id": "column_0",
+            "label": "Campagne d'enquêtes",
+            "sortable": "false"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "Ménage existe",
+            "id": "column_1",
+            "label": "Ménage existe",
+            "sortable": "false"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "NPI du représentant du ménage",
+            "id": "column_2",
+            "label": "NPI du représentant du ménage",
+            "sortable": "false"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "NPI inexistant",
+            "id": "column_3",
+            "label": "NPI inexistant",
+            "sortable": "false"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "Chef d'équipe",
+            "id": "column_4",
+            "label": "Chef d'équipe",
+            "sortable": "false"
+        },
+        {
+            "filterable": true,
+            "hidden": "false",
+            "name": "Equipe d'enquete",
+            "id": "column_5",
+            "label": "Equipe d'enquete",
+            "sortable": "false",
+            "datalist_type": "column"
+        }
+    ],
+    "pageSize": "0",
+    "orderBy": "",
+    "description": "",
+    "filters": [],
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "name": "liste des enquetes synchronisé",
+    "id": "liste_enquete_synchroniseliste_enquete_synchronise",
+    "binder": {
+        "className": "org.melkart.plugin.JdbcDatalistBinder",
+        "properties": {
+            "querySource": "sql",
+            "pagination": "true",
+            "debug": "",
+            "sql": "SELECT \r\n\tpmt.id,\r\n    pmt.c_compagne_enquete AS \"Campagne d'enquêtes\",\r\n    pmt.c_menage_existe AS \"Ménage existe\",\r\n    pmt.c_npi_preinscription AS \"NPI du représentant du ménage\",\r\n    pmt.c_npi_inexistant AS \"NPI inexistant\",\r\n\tplanif.c_chef_equipe AS \"Chef d'équipe\",\r\n\tplanif.c_equipe_enquete AS \"Equipe d'enquete\"\r\nFROM app_fd_pmt pmt\r\njoin app_fd_planif_enquete planif on (pmt.c_compagne_enquete=planif.c_compagne_enquete)\r\nwhere pmt.c_process_started is null\r\nUNION \r\nSELECT \r\n\tpmt.id,\r\n    pmt.c_compagne_enquete AS \"Campagne d'enquêtes\",\r\n    pmt.c_menage_existe AS \"Ménage existe\",\r\n    pmt.c_npi_preinscription AS \"NPI du représentant du ménage\",\r\n    pmt.c_npi_inexistant AS \"NPI inexistant\",\r\n\t'ZAR' AS \"Chef d'équipe\",\r\n\t'ZAR' AS \"Equipe d'enquete\"\r\nFROM app_fd_pmt pmt \r\nwhere ( c_compagne_enquete like ('%zar%') or c_compagne_enquete like ('%ZAR%') ) and pmt.c_process_started is null\r\n",
+            "primaryKey": "id"
+        }
+    },
+    "actions": [],
+    "order": ""
+}

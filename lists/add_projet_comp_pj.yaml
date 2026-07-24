@@ -1,0 +1,91 @@
+template:
+  className: ''
+  properties: {
+    }
+rowActions:
+- className: org.joget.apps.datalist.lib.HyperlinkDataListAction
+  id: rowAction_1
+  properties:
+    hrefColumn: id_programme;id
+    link-style-background-color: '#085069'
+    hrefParam: id_programme;id_projet
+    rules:
+    - field: isfullcomposante
+      join: AND
+      value: show
+      operator: =
+    label: <i class="fas fa-plus"></i> Composante
+    href: insc_composante?&embed=true
+    confirmation: ''
+    link-css-display-type: btn btn-sm btn-primary
+    datalist_type: row_action
+    target: popup
+    header_label: ''
+- className: org.joget.apps.datalist.lib.FormRowDeleteDataListAction
+  id: rowAction_0
+  properties:
+    deleteFiles: ''
+    deleteGridData: 'true'
+    formDefId: inscri_projet
+    deleteSubformData: ''
+    rules: [
+      ]
+    label: '<i class="fas fa-trash-alt"></i> '
+    confirmation: ''
+    link-css-display-type: btn btn-sm btn-danger
+    datalist_type: row_action
+    abortRelatedRunningProcesses: ''
+    header_label: ''
+columns:
+- filterable: true
+  hidden: 'false'
+  name: Acronyme du projet
+  id: column_5
+  label: Acronyme du projet
+  sortable: 'false'
+- filterable: true
+  hidden: 'false'
+  name: Identifiant du projet
+  id: column_4
+  label: Identifiant du projet
+  sortable: 'false'
+- filterable: true
+  hidden: 'false'
+  name: Nombre de composantes
+  id: column_7
+  label: Nombre de composantes
+  sortable: 'false'
+- filterable: true
+  hidden: 'false'
+  name: Année de démarrage du projet
+  id: column_6
+  label: Année de démarrage du projet
+  sortable: 'false'
+pageSize: '0'
+orderBy: ''
+description: ''
+filters: [
+  ]
+pageSizeSelectorOptions: 10,20,30,40,50,100
+name: add composante to projet
+id: add_projet_comp_pj
+binder:
+  className: org.melkart.plugin.JdbcDatalistBinder
+  properties:
+    querySource: sql
+    pagination: ''
+    debug: ''
+    sql: "SELECT \r\n    pro.id,\r\n    pro.c_id_projet AS \"Identifiant du projet\"\
+      ,\r\n    pro.c_acronyme_projet AS \"Acronyme du projet\",\r\n    pro.c_annee_demarrage_projet\
+      \ AS \"Année de démarrage du projet\",\r\n    pro.c_nbre_composantes_volets\
+      \ AS \"Nombre de composantes\",\r\n    pro.c_id_programme AS \"id_programme\"\
+      ,\r\n    CASE \r\n        WHEN COUNT(com.id) = CAST(pro.c_nbre_composantes_volets\
+      \ AS INTEGER) THEN 'hide'\r\n        ELSE 'show'\r\n    END AS isFullComposante\r\
+      \nFROM \r\n    app_fd_insc_projet pro\r\nLEFT JOIN \r\n    app_fd_insc_composante\
+      \ com ON pro.id = com.c_id_projet\r\nWHERE \r\n    pro.c_id_programme='#requestParam.id_programme#'\r\
+      \nGROUP BY \r\n    pro.id,\r\n    pro.c_id_projet,\r\n    pro.c_acronyme_projet,\r\
+      \n    pro.c_annee_demarrage_projet,\r\n    pro.c_nbre_composantes_volets"
+    primaryKey: id
+actions: [
+  ]
+order: ''

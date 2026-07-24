@@ -1,0 +1,440 @@
+elements:
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.SelectBox
+      properties:
+        controlField: ''
+        readonly: ''
+        size: ''
+        optionsBinder:
+          className: ''
+          properties: {
+            }
+        multiple: ''
+        options:
+        - label: Pas de réponse
+          value: '9'
+          grouping: ''
+        - label: Oui
+          value: '1'
+          grouping: ''
+        - label: Non
+          value: '2'
+          grouping: ''
+        - label: NSP
+          value: '8'
+          grouping: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        label: <strong>ID3. </strong>A-t-il une carte nationale d'identité?
+        id: id3
+        value: ''
+        readonlyLabel: ''
+    - className: org.joget.apps.form.lib.Radio
+      properties:
+        fullWidth: ''
+        controlField: ''
+        readonly: ''
+        optionsBinder:
+          className: ''
+          properties: {
+            }
+        options:
+        - label: oui
+          value: '1'
+          grouping: ''
+        - label: non
+          value: '2'
+          grouping: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        label: ID3A. Carte d"indentié vue
+        id: id3a
+        value: ''
+        readonlyLabel: ''
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: libelle_compagne
+        value: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: ID4A. Numéro de la carte d'identité (saisie 1)
+        disableIncrementDecrementArrow: ''
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: id4a
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: ID4B. Numéro de la carte d'identité (saisie 2)
+        disableIncrementDecrementArrow: ''
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: id4b
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: ID4C. Numéro de la carte d'identité (saisie 3)
+        disableIncrementDecrementArrow: ''
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: id4c
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.SelectBox
+      properties:
+        controlField: ''
+        readonly: ''
+        size: ''
+        optionsBinder:
+          className: ''
+          properties: {
+            }
+        multiple: ''
+        options:
+        - label: Pas de réponse
+          value: '9'
+          grouping: ''
+        - label: Oui
+          value: '1'
+          grouping: ''
+        - label: Non
+          value: '2'
+          grouping: ''
+        - label: N'a pas spontanément montré sa LEPI
+          value: '7'
+          grouping: ''
+        - label: NSP
+          value: '8'
+          grouping: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        label: <strong>ID5. </strong>A-t-il une carte LEPI?
+        id: id5
+        value: ''
+        readonlyLabel: ''
+    - className: org.joget.apps.form.lib.SelectBox
+      properties:
+        controlField: ''
+        readonly: ''
+        size: ''
+        optionsBinder:
+          className: ''
+          properties: {
+            }
+        multiple: ''
+        options:
+        - label: oui
+          value: '1'
+          grouping: ''
+        - label: non
+          value: '2'
+          grouping: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        label: ID5A.Carte LEPI vue
+        id: id5a
+        value: ''
+        readonlyLabel: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: ID6A. Numéro de la carte LEPI(saisie 1)
+        disableIncrementDecrementArrow: ''
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: id6a
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: ID6B. Numéro de la carte LEPI(saisie 2)
+        disableIncrementDecrementArrow: ''
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: id6b
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: ID6C. Numéro de la carte LEPI(saisie 3)
+        disableIncrementDecrementArrow: ''
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: id6c
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: <strong>ID8. </strong>Saisir le nom qui se trouve sur la carte d'identité
+          principale de (nom)?
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: id8
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.SelectBox
+      properties:
+        controlField: ''
+        readonly: ''
+        size: ''
+        optionsBinder:
+          className: ''
+          properties: {
+            }
+        multiple: ''
+        options:
+        - label: RAVIP
+          value: '1'
+          grouping: ''
+        - label: LEPI
+          value: '2'
+          grouping: ''
+        - label: Carte nationale d'identité
+          value: '3'
+          grouping: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        label: ID8A.Carte d'identité principale
+        id: id8a
+        value: ''
+        readonlyLabel: ''
+    - className: org.joget.apps.form.lib.SelectBox
+      properties:
+        controlField: ''
+        readonly: ''
+        size: ''
+        optionsBinder:
+          className: ''
+          properties: {
+            }
+        multiple: ''
+        options:
+        - label: oui
+          value: '1'
+          grouping: ''
+        - label: non
+          value: '2'
+          grouping: ''
+        - label: Non réponse
+          value: '9'
+          grouping: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        label: ID9.Avez vous eu à enrôler cette personne au RAVIP
+        id: id9
+        value: ''
+        readonlyLabel: ''
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: date_creation
+        value: ''
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: date_modification
+        value: ''
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: valider_par
+        value: ''
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: num_version
+        value: ''
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: cree_par
+        value: ''
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: idn
+        value: ''
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: id_parent
+        value: ''
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: identind
+        value: ''
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 100%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: ''
+    permissionReadonly: ''
+    permission:
+      className: ''
+      properties: {
+        }
+    label: ''
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: ''
+    regex: ''
+    readonly: ''
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section1
+    join: ''
+    readonlyLabel: ''
+className: org.joget.apps.form.model.Form
+properties:
+  loadBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+  name: QE_identite_cm_inter
+  description: ''
+  id: QE_identite_cm_inter
+  storeBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+  tableName: identite_cm_inter

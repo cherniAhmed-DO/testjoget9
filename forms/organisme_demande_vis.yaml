@@ -1,0 +1,518 @@
+elements:
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: Année du démarrage d'exercice au bénin
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: annee_demarrage
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.IdGeneratorField
+      properties:
+        hidden: ''
+        format: Prg-??????
+        workflowVariable: ''
+        envVariable: counter
+        isDistributedGeneration: ''
+        label: Identifiant du programme
+        id: id_prg
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: Nom du programme
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: nom_prg
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: Nom du programme en langue de travail locale
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: nom_prg_loc
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: Acronyme du programme
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: acro_prg
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.TextArea
+      properties:
+        requiredSanitize: ''
+        readonly: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        label: Description du programme
+        id: desc_prog
+        placeholder: ''
+        rows: '5'
+        cols: '20'
+        value: ''
+        readonlyLabel: ''
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 50%
+  - elements:
+    - className: org.joget.apps.form.lib.FileUpload
+      properties:
+        resizeMethod: ''
+        permissionType: ''
+        padding: ''
+        maxSizeMsg: Limite de taille de fichier dépassée
+        resizeWidth: ''
+        multiple: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        maxSize: ''
+        label: Documents d'autorisation au bénin
+        resizeQuality: '0.8'
+        removeFile: ''
+        readonly: ''
+        attachment: 'true'
+        size: ''
+        fileTypeMsg: type de fichier invalide
+        id: doc_autorisation
+        resizeHeight: ''
+        fileType: ''
+    - className: org.joget.apps.form.lib.FileUpload
+      properties:
+        resizeMethod: ''
+        permissionType: ''
+        padding: ''
+        maxSizeMsg: Limite de taille de fichier dépassée
+        resizeWidth: ''
+        multiple: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        maxSize: ''
+        label: Documents statutaires
+        resizeQuality: '0.8'
+        removeFile: ''
+        readonly: ''
+        attachment: 'true'
+        size: ''
+        fileTypeMsg: type de fichier invalide
+        id: doc_statutaires
+        resizeHeight: ''
+        fileType: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: Contact téléphonique du programme
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: contact_tel_prg
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: org.joget.apps.form.lib.DefaultValidator
+          properties:
+            type: email
+            message: ''
+            mandatory: ''
+        label: Contact électronique du programme
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: contact_electronique_prg
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.TextField
+      properties:
+        requiredSanitize: ''
+        maxlength: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        label: Localisation du programme
+        readonly: ''
+        size: ''
+        workflowVariable: ''
+        style: ''
+        id: localisation_prg
+        placeholder: ''
+        value: ''
+        readonlyLabel: ''
+        storeNumeric: ''
+    - className: org.joget.apps.form.lib.CustomHTML
+      properties:
+        requiredSanitize: ''
+        autoPopulate: ''
+        label: ''
+        id: field16
+        value: "<script>\r\n    $(\"body\").on(\"page_loaded\", function() {\r\n \
+          \    console.log(\"page loaded;--------------------------------------------------new\
+          \ trigger\");\r\n          var errorMessageElement = document.querySelector(\"\
+          .form-message.form-errors\");\r\n            // If the error message element\
+          \ does not exist after 2 seconds, proceed with redirection\r\n         \
+          \   if (!errorMessageElement) {\r\n                    console.log(\"-----------------no\
+          \ error  \");\r\n                // Redirect to the constructed URL\r\n\
+          \                 var URL=sessionStorage.getItem('redirectURL');\r\n   \
+          \               console.log(\"-----------------no error  and url is \",URL);\r\
+          \n                 if(URL!=null){\r\n                    //  sessionStorage.removeItem('redirectURL');\r\
+          \n                     window.location.href = URL;\r\n                 }\r\
+          \n        \r\n            }else{\r\n                sessionStorage.removeItem('redirectURL');\r\
+          \n            }\r\n    });\r\n$(document).ready(function() {\r\n       \
+          \  console.log(\"page loaded;--------------------------------------------------new\
+          \ trigger\");\r\n          var errorMessageElement = document.querySelector(\"\
+          .form-message.form-errors\");\r\n            // If the error message element\
+          \ does not exist after 2 seconds, proceed with redirection\r\n         \
+          \   if (!errorMessageElement) {\r\n                    console.log(\"-----------------no\
+          \ error  \");\r\n                // Redirect to the constructed URL\r\n\
+          \                 var URL=sessionStorage.getItem('redirectURL');\r\n   \
+          \               console.log(\"-----------------no error  and url is \",URL);\r\
+          \n                 if(URL!=null){\r\n                    //  sessionStorage.removeItem('redirectURL');\r\
+          \n                     window.location.href = URL;\r\n                 }\r\
+          \n        \r\n            }else{\r\n                sessionStorage.removeItem('redirectURL');\r\
+          \n            }\r\n   \r\n    $(\"#assignmentComplete\").on(\"click\", function(event)\
+          \ {\r\n      \r\n        event.preventDefault(); // Prevent default behavior\
+          \ to ensure our logic works\r\n        var typeFlash  = \"success\";\r\n\
+          \        var msgFlash = \"Votre demande de création de compte a été enregistré\
+          e\";\r\n        // Construct the redirect URL with the parameters\r\n  \
+          \      var redirectUrl = '/jw/web/userview/rsu/rsu_userview/_/welcome?type='\
+          \ + encodeURIComponent(typeFlash) + '&flash=' + encodeURIComponent(msgFlash);\r\
+          \n        sessionStorage.setItem('redirectURL',redirectUrl);\r\n       \
+          \ $(\"#assignmentComplete, #submit\").off(\"click\").trigger(\"click\");\r\
+          \n        \r\n      \r\n    });\r\n});\r\n</script>\r\n\r\n\r\n\r\n<style>\r\
+          \n       #npi {\r\n            filter: blur(5px); /* Apply blur effect */\r\
+          \n            transition: filter 0.3s ease; /* Smooth transition when blurring/unblurring\
+          \ */\r\n            cursor: pointer;\r\n        }\r\n\r\n        #npi:hover\
+          \ {\r\n            filter: none; /* Remove blur on hover or focus */\r\n\
+          \            cursor: text;\r\n        }\r\n</style>\r\n"
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 50%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: ''
+    permissionHidden: ''
+    permissionReadonly: ''
+    permission:
+      className: ''
+      properties: {
+        }
+    label: Fiche de création du programme
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: ''
+    regex: ''
+    readonly: 'true'
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section1
+    join: ''
+    readonlyLabel: ''
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.HiddenField
+      properties:
+        useDefaultWhenEmpty: ''
+        validator:
+          className: ''
+          properties: {
+            }
+        workflowVariable: ''
+        id: id
+        value: ''
+    - className: org.joget.apps.form.lib.CustomHTML
+      properties:
+        requiredSanitize: ''
+        autoPopulate: ''
+        label: ''
+        id: field3
+        value: "<script type=\"text/javascript\">\r\n    function resizeIframe(obj)\
+          \ {\r\n        obj.style.height = (obj.contentWindow.document.documentElement.scrollHeight)+50\
+          \ + 'px';    \r\n    }\r\n \r\n    $(document).ready(function(){\r\n   \
+          \     const id=document.getElementById(\"id\").value;\r\n       const frameEvals\
+          \ = document.getElementById(\"frame\");\r\n        frameEvals.src=\"/jw/web/userview/rsu/rsu_userview/_/liste_des_projets?id_programme=\"\
+          +id+\"&embed=true\";\r\n         \r\n    });\r\n    </script>\r\n  \r\n\
+          \    <iframe id=\"frame\" width=\"100%\" height=\"400px\" frameborder=\"\
+          0\" onload=\"resizeIframe(this)\" ></iframe>"
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 100%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: ''
+    permissionHidden: ''
+    permissionReadonly: ''
+    permission:
+      className: ''
+      properties: {
+        }
+    label: Liste des projets
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: ''
+    regex: ''
+    readonly: 'true'
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section2
+    join: ''
+    readonlyLabel: ''
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.CustomHTML
+      properties:
+        requiredSanitize: ''
+        autoPopulate: ''
+        label: ''
+        id: field4
+        value: "<script type=\"text/javascript\">\r\n    function resizeIframe(obj)\
+          \ {\r\n        obj.style.height = (obj.contentWindow.document.documentElement.scrollHeight)+50\
+          \ + 'px';    \r\n    }\r\n \r\n    $(document).ready(function(){\r\n   \
+          \     const id=document.getElementById(\"id\").value;\r\n       const frameEvals\
+          \ = document.getElementById(\"frame2\");\r\n        frameEvals.src=\"/jw/web/userview/rsu/rsu_userview/_/liste_composante_projet?id_programme=\"\
+          +id+\"&embed=true\";\r\n         \r\n    });\r\n    </script>\r\n  \r\n\
+          \    <iframe id=\"frame2\" width=\"100%\" height=\"400px\" frameborder=\"\
+          0\" onload=\"resizeIframe(this)\" ></iframe>"
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 100%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: ''
+    permissionHidden: ''
+    permissionReadonly: ''
+    permission:
+      className: ''
+      properties: {
+        }
+    label: Liste des composantes projet
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: ''
+    regex: ''
+    readonly: 'true'
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section3
+    join: ''
+    readonlyLabel: ''
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.CustomHTML
+      properties:
+        requiredSanitize: ''
+        autoPopulate: ''
+        label: ''
+        id: field15
+        value: "<!--<script src=\"https://cdn.jsdelivr.net/npm/dom-to-image-more@2.9.0/dist/dom-to-image-more.min.js\"\
+          ></script>-->\r\n<!--<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js\"\
+          ></script>-->\r\n\r\n\r\n\r\n<div class=\"button-wrapper\">\r\n  <a id=\"\
+          pdf_download\" href=\"#\" onclick=\"downloadPDF()\">Télécharger ma demande\
+          \ de création de compte</a>\r\n</div>\r\n<style>\r\n    #pdf_download {\r\
+          \n  display: inline-block;\r\n  margin: 30px auto;\r\n  padding: 12px 24px;\r\
+          \n  background-color: #007bff; /* Bootstrap blue */\r\n  color: #fff;\r\n\
+          \  text-decoration: none;\r\n  font-size: 16px;\r\n  font-weight: 500;\r\
+          \n  border-radius: 8px;\r\n  text-align: center;\r\n  box-shadow: 0 4px\
+          \ 6px rgba(0, 0, 0, 0.1);\r\n  transition: background-color 0.3s ease;\r\
+          \n}\r\n\r\n#pdf_download:hover {\r\n  background-color: #0056b3;\r\n}\r\n\
+          \r\n.button-wrapper {\r\n  text-align: center;\r\n}\r\n\r\n</style>\r\n\
+          <!-- Include html2canvas -->\r\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js\"\
+          ></script>\r\n\r\n<!-- Include jsPDF (UMD version) -->\r\n<script src=\"\
+          https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js\"></script>\r\
+          \n\r\n\r\n<script>\r\n// async function downloadPDF() {\r\n//   const {\
+          \ jsPDF } = window.jspdf;\r\n//   const element = document.getElementById(\"\
+          organisme_demande_vis\");\r\n\r\n//   const canvas = await html2canvas(element,\
+          \ { scale: 2 });\r\n//   const imgData = canvas.toDataURL(\"image/png\"\
+          );\r\n\r\n//   const pdf = new jsPDF(\"p\", \"mm\", \"a4\");\r\n//   const\
+          \ pdfWidth = pdf.internal.pageSize.getWidth();\r\n//   const pdfHeight =\
+          \ (canvas.height * pdfWidth) / canvas.width;\r\n\r\n//   pdf.addImage(imgData,\
+          \ \"PNG\", 0, 0, pdfWidth, pdfHeight);\r\n//   pdf.save(\"Demande.pdf\"\
+          );\r\n// }\r\n// async function downloadPDF() {\r\n//   const { jsPDF }\
+          \ = window.jspdf;\r\n//   const element = document.getElementById(\"organisme_demande_vis\"\
+          );\r\n\r\n//   // Clone the element to avoid modifying the original\r\n\
+          //   const clone = element.cloneNode(true);\r\n\r\n//   // Helper to copy\
+          \ iframe content\r\n//   function injectIframeContent(cloneDoc, iframeId)\
+          \ {\r\n//     const iframe = document.getElementById(iframeId);\r\n//  \
+          \   const iframeContent = iframe.contentDocument || iframe.contentWindow.document;\r\
+          \n//     const container = cloneDoc.querySelector(`#${iframeId}`);\r\n//\
+          \     if (iframeContent && container) {\r\n//       const iframeBody = iframeContent.body.cloneNode(true);\r\
+          \n//       const div = document.createElement(\"div\");\r\n//       div.innerHTML\
+          \ = iframeBody.innerHTML;\r\n//       container.parentNode.replaceChild(div,\
+          \ container); // Replace iframe with its content\r\n//     }\r\n//   }\r\
+          \n\r\n//   // Inject iframe contents into the cloned node\r\n//   injectIframeContent(clone,\
+          \ \"frame\");\r\n//   injectIframeContent(clone, \"frame2\");\r\n\r\n//\
+          \   // Create a hidden container to render the clone\r\n//   const hidden\
+          \ = document.createElement(\"div\");\r\n//   hidden.style.position = \"\
+          fixed\";\r\n//   hidden.style.top = \"-10000px\";\r\n//   hidden.style.left\
+          \ = \"-10000px\";\r\n//   hidden.appendChild(clone);\r\n//   document.body.appendChild(hidden);\r\
+          \n\r\n//   const canvas = await html2canvas(clone, { scale: 2 });\r\n//\
+          \   const imgData = canvas.toDataURL(\"image/png\");\r\n\r\n//   const pdf\
+          \ = new jsPDF(\"p\", \"mm\", \"a4\");\r\n//   const pdfWidth = pdf.internal.pageSize.getWidth();\r\
+          \n//   const pdfHeight = (canvas.height * pdfWidth) / canvas.width;\r\n\r\
+          \n//   pdf.addImage(imgData, \"PNG\", 0, 0, pdfWidth, pdfHeight);\r\n//\
+          \   pdf.save(\"Demande.pdf\");\r\n\r\n//   // Cleanup\r\n//   document.body.removeChild(hidden);\r\
+          \n// }\r\nfunction injectIframeContent(clone, iframeId) {\r\n  const originalIframe\
+          \ = document.getElementById(iframeId);\r\n  const iframeContent = originalIframe.contentDocument?.documentElement;\r\
+          \n\r\n  if (!iframeContent) {\r\n    console.warn(`Iframe ${iframeId} has\
+          \ no accessible content.`);\r\n    return;\r\n  }\r\n\r\n  const clonedIframe\
+          \ = clone.querySelector(`#${iframeId}`);\r\n\r\n  if (clonedIframe) {\r\n\
+          \    const div = document.createElement(\"div\");\r\n    div.innerHTML =\
+          \ iframeContent.outerHTML;\r\n    div.style.border = \"1px solid #ccc\"\
+          ; // Optional: mimic iframe border\r\n    clonedIframe.parentNode.replaceChild(div,\
+          \ clonedIframe);\r\n  }\r\n}\r\n\r\nasync function downloadPDF() {\r\n \
+          \ const { jsPDF } = window.jspdf;\r\n\r\n  const element = document.getElementById(\"\
+          organisme_demande_vis\");\r\n\r\n  // Clone and inject iframe contents (assuming\
+          \ already done correctly)\r\n  const clone = element.cloneNode(true);\r\n\
+          \    clone.querySelector(\"#pdf_download\")?.remove();\r\n      clone.querySelector(\"\
+          #section-actions\")?.remove();\r\n  injectIframeContent(clone, \"frame\"\
+          );\r\n  injectIframeContent(clone, \"frame2\");\r\n\r\n  const hidden =\
+          \ document.createElement(\"div\");\r\n  hidden.style.position = \"fixed\"\
+          ;\r\n  hidden.style.top = \"-10000px\";\r\n  hidden.style.left = \"-10000px\"\
+          ;\r\n  hidden.appendChild(clone);\r\n  document.body.appendChild(hidden);\r\
+          \n\r\n  const canvas = await html2canvas(clone, { scale: 2 });\r\n  const\
+          \ imgData = canvas.toDataURL(\"image/png\");\r\n\r\n  const pdf = new jsPDF(\"\
+          p\", \"mm\", \"a4\");\r\n\r\n  const pdfWidth = pdf.internal.pageSize.getWidth();\r\
+          \n  const pdfHeight = pdf.internal.pageSize.getHeight();\r\n\r\n  const\
+          \ imgWidth = pdfWidth;\r\n  const imgHeight = (canvas.height * pdfWidth)\
+          \ / canvas.width;\r\n\r\n  let heightLeft = imgHeight;\r\n  let position\
+          \ = 0;\r\n\r\n  // Add first page\r\n  pdf.addImage(imgData, \"PNG\", 0,\
+          \ position, imgWidth, imgHeight);\r\n  heightLeft -= pdfHeight;\r\n\r\n\
+          \  // Add more pages if necessary\r\n  while (heightLeft > 0) {\r\n    position\
+          \ -= pdfHeight;\r\n    pdf.addPage();\r\n    pdf.addImage(imgData, \"PNG\"\
+          , 0, position, imgWidth, imgHeight);\r\n    heightLeft -= pdfHeight;\r\n\
+          \  }\r\n\r\n  pdf.save(\"Demande.pdf\");\r\n  document.body.removeChild(hidden);\r\
+          \n}\r\n\r\n </script>\r\n"
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 100%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: ''
+    permissionReadonly: ''
+    permission:
+      className: ''
+      properties: {
+        }
+    label: ''
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: ''
+    regex: ''
+    readonly: ''
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: section4
+    join: ''
+    readonlyLabel: ''
+className: org.joget.apps.form.model.Form
+properties:
+  noPermissionMessage: ''
+  loadBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+    properties: {
+      }
+  name: visualisation demande organisme
+  description: ''
+  postProcessorRunOn: create
+  permission:
+    className: ''
+    properties: {
+      }
+  id: organisme_demande_vis
+  postProcessor:
+    className: ''
+    properties: {
+      }
+  storeBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+    properties: {
+      }
+  tableName: insc_programme

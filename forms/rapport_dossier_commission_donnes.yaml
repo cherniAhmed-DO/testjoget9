@@ -1,0 +1,108 @@
+elements:
+- elements:
+  - elements:
+    - className: org.joget.apps.form.lib.CustomHTML
+      properties:
+        requiredSanitize: ''
+        autoPopulate: ''
+        label: ''
+        id: field4
+        value: "<script>\r\n\r\n$(document).ready(function() {\r\n        // Simulate\
+          \ your server-side array (replace this properly)\r\n        const dossierArray\
+          \ = JSON.parse('#variable.dossierArray#'); \r\n    console.log(\"Dossier\
+          \ Array: \", dossierArray); // Debugging line\r\n    \r\n    // Ensure sessionStorage\
+          \ index is initialized\r\n    if (sessionStorage.getItem('currentIndex')\
+          \ === null) {\r\n        sessionStorage.setItem('currentIndex', 0);\r\n\
+          \    }\r\n    \r\n    // Function to update iframe src\r\n    function updateIframe(dossierArray)\
+          \ {\r\n        console.log(\"Updating iframe...\"); // Debugging line\r\n\
+          \        const index = parseInt(sessionStorage.getItem('currentIndex'));\r\
+          \n        const frame = document.getElementById(\"frame\");\r\n        const\
+          \ id = dossierArray[index];\r\n        console.log(\"Current index: \" +\
+          \ index + \", ID: \" + id); // Debugging line\r\n        frame.src = \"\
+          /jw/web/userview/rsu/rsu_userview/_/rapport_iddividuelle?id=\"+id+\"&embed=true\"\
+          ;\r\n        document.getElementById('previousBtn').disabled = (index ===\
+          \ 0);\r\n        document.getElementById('nextBtn').disabled = (index ===\
+          \ dossierArray.length - 1);\r\n    }\r\n    \r\n    // Handlers for Previous\
+          \ and Next buttons\r\n    function previous() {\r\n        let index = parseInt(sessionStorage.getItem('currentIndex'));\r\
+          \n        if (index > 0) {\r\n            index--;\r\n            sessionStorage.setItem('currentIndex',\
+          \ index);\r\n            updateIframe();\r\n        }\r\n    }\r\n    \r\
+          \n    function next() {\r\n        let index = parseInt(sessionStorage.getItem('currentIndex'));\r\
+          \n        if (index < dossierArray.length - 1) {\r\n            index++;\r\
+          \n            sessionStorage.setItem('currentIndex', index);\r\n       \
+          \     updateIframe();\r\n        }\r\n    }\r\n    \r\n    // Resize iframe\
+          \ height (your original function)\r\n    function resizeIframe(obj) {\r\n\
+          \        obj.style.height = (obj.contentWindow.document.documentElement.scrollHeight)\
+          \ + 50 + 'px';    \r\n    }\r\n    document.getElementById('previousBtn').addEventListener('click',\
+          \ previous);\r\n    document.getElementById('nextBtn').addEventListener('click',\
+          \ next);\r\n    updateIframe(dossierArray);\r\n    document.getElementById('frame').addEventListener('load',\
+          \ function () {\r\n    resizeIframe(this);\r\n   \r\n});\r\n});\r\n\r\n\
+          \    \r\n    </script>\r\n    \r\n    <div style=\"text-align: center; margin-bottom:\
+          \ 20px;\">\r\n      <a id=\"previousBtn\">Précedent</a>\r\n      <a id=\"\
+          nextBtn\">Suivant</a>\r\n    </div>\r\n    \r\n    \r\n    <!-- Iframe -->\r\
+          \n    <iframe src=\"\" id=\"frame\" width=\"100%\" height=\"400px\" frameborder=\"\
+          0\"></iframe>\r\n    <style>\r\n    #previousBtn, #nextBtn {\r\n       \
+          \ background-color: #4CAF50; /* Green background */\r\n        border: none;\r\
+          \n        color: white;\r\n        padding: 12px 24px;\r\n        margin:\
+          \ 10px 5px;\r\n        text-align: center;\r\n        text-decoration: none;\r\
+          \n        font-size: 16px;\r\n        cursor: pointer;\r\n        border-radius:\
+          \ 8px;\r\n        transition: background-color 0.3s ease, transform 0.2s\
+          \ ease;\r\n    }\r\n   #frame {\r\n    margin: auto;\r\n    margin-top:\
+          \ 20px; /* Add space above iframe */\r\n}\r\n    \r\n    #previousBtn:hover,\
+          \ #nextBtn:hover {\r\n        background-color: #45a049; /* Darker green\
+          \ when hovered */\r\n        transform: scale(1.05); /* Slight zoom on hover\
+          \ */\r\n    }\r\n    \r\n    #previousBtn:disabled, #nextBtn:disabled {\r\
+          \n        background-color: #cccccc; /* Grey out if disabled */\r\n    \
+          \    cursor: not-allowed;\r\n        transform: none;\r\n    }\r\n    </style>\r\
+          \n    \r\n"
+    className: org.joget.apps.form.model.Column
+    properties:
+      width: 100%
+  className: org.joget.apps.form.model.Section
+  properties:
+    visibilityControl: ''
+    permissionReadonly: ''
+    permission:
+      className: ''
+      properties: {
+        }
+    label: Rapport du comité
+    reverse: ''
+    storeBinder:
+      className: ''
+      properties: {
+        }
+    visibilityValue: ''
+    regex: ''
+    readonly: ''
+    loadBinder:
+      className: ''
+      properties: {
+        }
+    comment: ''
+    id: rapport
+    join: ''
+    readonlyLabel: ''
+className: org.joget.apps.form.model.Form
+properties:
+  noPermissionMessage: ''
+  loadBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+    properties: {
+      }
+  name: rapport dossier commission données
+  description: ''
+  postProcessorRunOn: create
+  permission:
+    className: ''
+    properties: {
+      }
+  id: rapport_dossier_commission_donnes
+  postProcessor:
+    className: ''
+    properties: {
+      }
+  storeBinder:
+    className: org.joget.apps.form.lib.WorkflowFormBinder
+    properties: {
+      }
+  tableName: commission_donnes
