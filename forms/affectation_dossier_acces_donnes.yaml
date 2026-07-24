@@ -10,9 +10,7 @@ elements:
             }
         workflowVariable: ''
         id: field17
-
-        value: hihiv1
-
+        value: hahahihi
     - className: org.joget.apps.form.lib.HiddenField
       properties:
         useDefaultWhenEmpty: ''
